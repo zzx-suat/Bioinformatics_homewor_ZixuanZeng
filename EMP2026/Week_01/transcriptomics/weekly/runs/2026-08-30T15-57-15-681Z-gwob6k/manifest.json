@@ -1,0 +1,30 @@
+{
+  "course_code": "EMP2026",
+  "emp_version": "9.0.4",
+  "layout": "week_first",
+  "week_dir": "Week_01",
+  "track_id": "transcriptomics",
+  "track_key": "transcriptomics",
+  "track_title": "转录组 RNA-seq",
+  "assignment_type": "weekly",
+  "assignment_id": "week_01",
+  "assignment_title": "第1周",
+  "week": 1,
+  "type": "weekly",
+  "case_id": "course_transcriptomics",
+  "task_ids": [],
+  "student_id": "24000114",
+  "display_name": "曾梓轩",
+  "github_login": "zzx-suat",
+  "github_repo": "zzx-suat/Bioinformatics_homewor_ZixuanZeng",
+  "github_branch": "main",
+  "git_path": "EMP2026/Week_01/transcriptomics/weekly/runs/2026-08-30T15-57-15-681Z-gwob6k",
+  "session_id": "5Cg15RA8YChX9Vse9ZJkcwmz",
+  "experiment": null,
+  "run_id": "2026-08-30T15-57-15-681Z-gwob6k",
+  "synced_at": "2026-08-30T15:57:15Z",
+  "include_rds": false,
+  "session_manifest": {
+    "session_id": "5Cg15RA8YChX9Vse9ZJkcwmz"
+  }
+}
