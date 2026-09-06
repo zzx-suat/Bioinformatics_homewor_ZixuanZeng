@@ -1,0 +1,30 @@
+{
+  "success": true,
+  "user_id": "5Cg15RA8YChX9Vse9ZJkcwmz",
+  "events": [
+    {
+      "event_type": "api_call",
+      "path": "/llm/openrouter_verified",
+      "method": "GET",
+      "total_ms": 37,
+      "backend_ms": 8.1,
+      "case_id": null,
+      "experiment": null,
+      "user_id": "5Cg15RA8YChX9Vse9ZJkcwmz",
+      "role": "local",
+      "ts": "2026-08-30T23:48:31.323+0800"
+    },
+    {
+      "event_type": "api_call",
+      "path": "/clinical/vars_standalone/5Cg15RA8YChX9Vse9ZJkcwmz",
+      "method": "GET",
+      "total_ms": 65,
+      "backend_ms": 41.2,
+      "case_id": null,
+      "experiment": null,
+      "user_id": "5Cg15RA8YChX9Vse9ZJkcwmz",
+      "role": "local",
+      "ts": "2026-08-30T23:48:31.446+0800"
+    }
+  ]
+}
