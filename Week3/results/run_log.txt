@@ -1,0 +1,468 @@
+### Week 3 pipeline run
+started : 2026-09-10 16:20:33 CST 
+R       : R version 4.6.1 (2026-06-24 ucrt) 
+wd      : D:/BioLession in total/Bioinformatics/week3/week3_project 
+
+
+##############################################################
+### SOURCING R/01_fetch.R 
+##############################################################
+
+================ STEP 1: list supplementary files (no download) ================
+  [ok] supp listing on attempt 1 -> 2 file(s)
+                            fname
+1               GSE111889_RAW.tar
+2 GSE111889_host_tx_counts.tsv.gz
+                                                                                                 url
+1               https://ftp.ncbi.nlm.nih.gov/geo/series/GSE111nnn/GSE111889/suppl//GSE111889_RAW.tar
+2 https://ftp.ncbi.nlm.nih.gov/geo/series/GSE111nnn/GSE111889/suppl//GSE111889_host_tx_counts.tsv.gz
+
+================ STEP 2: download the series matrix (metadata layer) ==========
+prefetch series matrix: https://ftp.ncbi.nlm.nih.gov/geo/series/GSE111nnn/GSE111889/matrix/GSE111889_series_matrix.txt.gz 
+  [cache] already on disk: GSE111889_series_matrix.txt.gz 13525 bytes
+parsing local series matrix: data_raw/GSE111889_series_matrix.txt.gz 
+  parsed: ExpressionSet  dim: 0 x 251 
+class: ExpressionSet 
+dim (features x samples): 0 x 251 
+platform: GPL11154 
+n samples in series matrix: 251 
+GSM range: GSM3043377 ... GSM3043627 
+
+-- phenoData columns --
+ [1] "title"                   "geo_accession"          
+ [3] "status"                  "submission_date"        
+ [5] "last_update_date"        "type"                   
+ [7] "channel_count"           "source_name_ch1"        
+ [9] "organism_ch1"            "characteristics_ch1"    
+[11] "characteristics_ch1.1"   "characteristics_ch1.2"  
+[13] "treatment_protocol_ch1"  "growth_protocol_ch1"    
+[15] "molecule_ch1"            "extract_protocol_ch1"   
+[17] "extract_protocol_ch1.1"  "taxid_ch1"              
+[19] "data_processing"         "data_processing.1"      
+[21] "data_processing.2"       "platform_id"            
+[23] "contact_name"            "contact_laboratory"     
+[25] "contact_department"      "contact_institute"      
+[27] "contact_address"         "contact_city"           
+[29] "contact_state"           "contact_zip/postal_code"
+[31] "contact_country"         "data_row_count"         
+[33] "instrument_model"        "library_selection"      
+[35] "library_source"          "library_strategy"       
+[37] "relation"                "supplementary_file_1"   
+[39] "biopsy location:ch1"     "disease status:ch1"     
+[41] "gender:ch1"             
+
+-- first 3 sample titles --
+[1] "CSM5FZ1G" "CSM5FZ1F" "CSM5FZ1I"
+
+-- characteristics columns, first sample --
+  characteristics_ch1      : biopsy location: Sigmoid Colon
+  characteristics_ch1.1    : disease status: Crohn's Disease
+  characteristics_ch1.2    : gender: Female
+
+-- relation fields (BioProject / SRA links) --
+  relation                 : BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN08723464
+
+-- supplementary_file_1 of first 2 samples (raw-read layer) --
+                                                                                    supplementary_file_1
+GSM3043377 ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM3043nnn/GSM3043377/suppl/GSM3043377_CSM5FZ1G.tsv.gz
+GSM3043378 ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM3043nnn/GSM3043378/suppl/GSM3043378_CSM5FZ1F.tsv.gz
+
+-- does the series matrix itself carry an expression table? --
+exprs() dim: 0 x 251   (0 rows means: NO data table in the series matrix -> counts must come from the supplementary file. This is itself an answer for Table 0 Step 4.)
+
+================ STEP 3: download the supplementary count matrix ===============
+chosen file : GSE111889_host_tx_counts.tsv.gz 
+reported size:  bytes
+url          : https://ftp.ncbi.nlm.nih.gov/geo/series/GSE111nnn/GSE111889/suppl//GSE111889_host_tx_counts.tsv.gz 
+  [cache] already on disk: GSE111889_host_tx_counts.tsv.gz 11130307 bytes
+downloaded bytes: 11130307 
+md5             : ff2ee7167b202448be2441e03b7ed996 
+download date   : 2026-09-10 16:20:41 CST 
+
+01_fetch.R done. Provenance saved to data_clean/01_fetch_objects.rds
+
+
+##############################################################
+### SOURCING R/02_inspect_clean.R 
+##############################################################
+
+================ READ THE SUPPLEMENTARY COUNT MATRIX ================
+file: data_raw/GSE111889_host_tx_counts.tsv.gz  md5: ff2ee7167b202448be2441e03b7ed996 
+dim (genes x samples): 55765 x 251 
+gene ID examples : 5S_rRNA, 7SK, A1BG, A1BG-AS1 
+column examples  : CSM5FZ1F, CSM5FZ1G, CSM5FZ1H, CSM5FZ1I 
+storage mode     : integer 
+
+================ 5 INTEGRITY CHECKS (stopifnot = failures are LOUD) =========
+1. duplicated sample columns : 0 (0 = none)
+2. duplicated gene IDs       : 0 (0 = none)
+   NA values in matrix       : 0 
+3. all values integers?      : TRUE 
+   min / max                 : 0 / 1831534 
+   any negative?             : FALSE 
+     Min.   1st Qu.    Median      Mean   3rd Qu.      Max. 
+      0.0       0.0       0.0     688.2      47.0 1086990.0 
+4. ncol(expr) = 251  vs nrow(pheno) = 251 
+
+================ MAP COUNT COLUMNS TO GSM METADATA ================
+title   geo  desc 
+  251     0     0 
+best matching metadata column: title -> matched 251 of 251 columns
+samples with metadata: 251  | without: 0 
+5. identical(colnames(expr), rownames(meta)) : TRUE 
+
+================ BUILD THE SAMPLE DICTIONARY (design reconstruction) ========
+
+-- group sizes (diagnosis) --
+
+   Crohn's Disease            Non IBD Ulcerative Colitis 
+               127                 50                 74 
+
+-- biopsy site --
+
+Ascending (right-sided) colon                         Cecum 
+                            8                             5 
+Descending (left-sided) colon                         Ileum 
+                            9                            89 
+                 Non-inflamed                        Rectum 
+                            1                           100 
+                Sigmoid Colon                Terminal ileum 
+                           22                             3 
+             Transverse colon 
+                           14 
+
+-- unique subjects --
+0 
+
+-- samples per subject (repeated-measures / paired structure) --
+< table of extent 0 >
+
+-- head of dictionary --
+  sample_col        gsm    title          diagnosis subject_id   biopsy_site
+1   CSM5FZ1F GSM3043378 CSM5FZ1F    Crohn's Disease       <NA>         Ileum
+2   CSM5FZ1G GSM3043377 CSM5FZ1G    Crohn's Disease       <NA> Sigmoid Colon
+3   CSM5FZ1H GSM3043380 CSM5FZ1H    Crohn's Disease       <NA> Sigmoid Colon
+4   CSM5FZ1I GSM3043379 CSM5FZ1I    Crohn's Disease       <NA>        Rectum
+5   CSM5FZ1J GSM3043381 CSM5FZ1J Ulcerative Colitis       <NA>         Ileum
+  visit_week    sex  age
+1       <NA> Female <NA>
+2       <NA> Female <NA>
+3       <NA> Female <NA>
+4       <NA> Female <NA>
+5       <NA> Female <NA>
+
+================ LOW-COUNT FILTER ================
+threshold: >= 10 counts in >= 50 samples (min_samp = smallest group size, floor 3)
+genes retained: 20516 of 55765 (36.8%); removed 35249
+all-zero genes before filtering: 2700 
+
+02_inspect_clean.R done -> data_clean/counts_filtered.rds
+
+
+##############################################################
+### SOURCING R/03_qc.R 
+##############################################################
+
+================ LIBRARY SIZE ================
+    Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
+       0 35143452 39225482 39166461 43280282 73262244 
+min / median / max library size:          0 39,225,482 73,262,244 
+fold range (max/min): Inf 
+samples below 50% of median depth (flag, do NOT delete): 4 
+           sample libsize              group
+CSMDRVXI CSMDRVXI       0    Crohn's Disease
+MSM719ME MSM719ME       0 Ulcerative Colitis
+HSM5FZAZ HSM5FZAZ  148660    Crohn's Disease
+CSMDRVXQ CSMDRVXQ  371588    Crohn's Disease
+
+================ ZERO-DEPTH SAMPLES: DOCUMENT BEFORE EXCLUDING ================
+samples with ZERO total counts after filtering: 2 
+    sample        gsm          diagnosis
+1 CSMDRVXI GSM3043430    Crohn's Disease
+2 MSM719ME GSM3043591 Ulcerative Colitis
+                                       reason
+1 zero total counts; cannot be CPM-normalised
+2 zero total counts; cannot be CPM-normalised
+-> results/excluded_samples.csv written (declare these in the report)
+very low depth (<50% of median) but RETAINED: CSMDRVXQ, HSM5FZAZ 
+samples carried into normalisation/PCA: 249 of 251 
+
+================ DISTRIBUTION (log2 CPM density) ================
+density plot written. Any single curve far from the bulk = candidate outlier.
+
+================ PCA (on log2 CPM, visualization only) ================
+variance explained PC1-PC4: 41.6%  21.5%  6.3%  4.5% 
+
+-- association of PC1/PC2 with candidate drivers (ANOVA p-values) --
+  PC1 ~ group  : p = 0.545
+  PC2 ~ group  : p = 0.00236
+  PC1 ~ site   : p = <2e-16
+  PC2 ~ site   : p = 0.437
+  PC1 ~ log10(libsize) : r = -0.064 
+
+03_qc.R done. Figures in results/ ; sessionInfo.txt written
+
+
+##############################################################
+### SOURCING R/04_minicase_GSE87487.R 
+##############################################################
+
+================ supplementary file inventory ================
+  [ok] supp listing on attempt 1 -> 1 file(s)
+                             fname
+1 GSE87487_counts.20samples.txt.gz
+                                                                                                url
+1 https://ftp.ncbi.nlm.nih.gov/geo/series/GSE87nnn/GSE87487/suppl//GSE87487_counts.20samples.txt.gz
+
+================ series metadata ================
+prefetch series matrix: https://ftp.ncbi.nlm.nih.gov/geo/series/GSE87nnn/GSE87487/matrix/GSE87487_series_matrix.txt.gz 
+  [cache] already on disk: GSE87487_series_matrix.txt.gz 2833 bytes
+parsing local series matrix: data_raw/GSE87487_series_matrix.txt.gz 
+  parsed: ExpressionSet  dim: 0 x 20 
+n samples: 20 
+GSM range: GSM2332515 ... GSM2332534 
+platform : GPL11154 
+
+-- titles (pre/post pairing is usually visible here) --
+   gsm        title  
+1  GSM2332515 RJBx1  
+2  GSM2332516 RJBx2  
+3  GSM2332517 MJBx1  
+4  GSM2332518 MJBx2  
+5  GSM2332519 HBBX1  
+6  GSM2332520 HBBx2  
+7  GSM2332521 OCBx1  
+8  GSM2332522 OCBx2  
+9  GSM2332523 Pt2Bx1 
+10 GSM2332524 Pt2Bx2 
+11 GSM2332525 Pt6Bx1 
+12 GSM2332526 Pt6Bx2 
+13 GSM2332527 Pt8Bx1 
+14 GSM2332528 Pt8Bx2 
+15 GSM2332529 Pt9Bx1 
+16 GSM2332530 Pt9Bx2 
+17 GSM2332531 Pt10Bx1
+18 GSM2332532 Pt10Bx2
+19 GSM2332533 Pt12Bx1
+20 GSM2332534 Pt12Bx2
+
+-- characteristics --
+
+transplant stage: post-reperfusion  transplant stage: pre-reperfusion 
+                                10                                 10 
+
+ischemia reperfusion injury (iri): negative 
+                                         12 
+ischemia reperfusion injury (iri): positive 
+                                          8 
+
+tissue: Liver 
+           20 
+
+-- relation (SRA / BioProject) --
+ [1] "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN05852473"
+ [2] "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN05852472"
+ [3] "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN05852471"
+ [4] "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN05852468"
+ [5] "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN05852467"
+ [6] "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN05852466"
+ [7] "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN05852465"
+ [8] "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN05852464"
+ [9] "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN05852463"
+[10] "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN05852470"
+[11] "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN05852461"
+[12] "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN05852475"
+[13] "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN05852462"
+[14] "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN05852457"
+[15] "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN05852456"
+[16] "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN05852474"
+[17] "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN05852469"
+[18] "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN05852458"
+[19] "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN05852460"
+[20] "BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN05852459"
+ [1] "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX2199841"
+ [2] "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX2199842"
+ [3] "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX2199843"
+ [4] "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX2199844"
+ [5] "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX2199845"
+ [6] "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX2199846"
+ [7] "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX2199847"
+ [8] "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX2199848"
+ [9] "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX2199849"
+[10] "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX2199850"
+[11] "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX2199851"
+[12] "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX2199852"
+[13] "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX2199853"
+[14] "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX2199854"
+[15] "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX2199855"
+[16] "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX2199856"
+[17] "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX2199857"
+[18] "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX2199858"
+[19] "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX2199859"
+[20] "SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX2199860"
+
+================ Q1: ARE THE VALUES COUNTS? ================
+file: GSE87487_counts.20samples.txt.gz  reported size:  bytes
+  [cache] already on disk: GSE87487_counts.20samples.txt.gz 3901096 bytes
+bytes on disk: 3901096  md5: 8efee79167460de2f5d66bead5187d60 
+download date: 2026-09-10 16:20:59 CST 
+non-sample annotation columns found: Length -> dropped
+dim (genes x samples): 60498 x 20 
+columns: Sample_HBBx1.bam, Sample_HBBx2.bam, Sample_MJBx1.bam, Sample_MJBx2.bam, Sample_OCBx1.bam, Sample_OCBx2.bam, Sample_Pt10-Bx1.bam, Sample_Pt10-Bx2.bam, Sample_Pt12-Bx1.bam, Sample_Pt12-Bx2.bam, Sample_Pt2-Bx1.bam, Sample_Pt2-Bx2.bam, Sample_Pt6-Bx1.bam, Sample_Pt6-Bx2.bam, Sample_Pt8-Bx1.bam, Sample_Pt8-Bx2.bam, Sample_Pt9-Bx1.bam, Sample_Pt9-Bx2.bam, Sample_RJBx1.bam, Sample_RJBx2.bam 
+gene IDs: ENSG00000223972.5, ENSG00000227232.5, ENSG00000278267.1 
+ALL INTEGER? -> TRUE 
+min: 0  max: 1003757  any negative: FALSE  any fractional: FALSE 
+column sums (library sizes):
+   Sample_HBBx1.bam    Sample_HBBx2.bam    Sample_MJBx1.bam    Sample_MJBx2.bam 
+            9562054             9092999            10355042            10227670 
+   Sample_OCBx1.bam    Sample_OCBx2.bam Sample_Pt10-Bx1.bam Sample_Pt10-Bx2.bam 
+            7578188             7059456             7119325             9533693 
+Sample_Pt12-Bx1.bam Sample_Pt12-Bx2.bam  Sample_Pt2-Bx1.bam  Sample_Pt2-Bx2.bam 
+            8192677             9155225             9391667             9976642 
+ Sample_Pt6-Bx1.bam  Sample_Pt6-Bx2.bam  Sample_Pt8-Bx1.bam  Sample_Pt8-Bx2.bam 
+            9539361             9628568             9304681             8400651 
+ Sample_Pt9-Bx1.bam  Sample_Pt9-Bx2.bam    Sample_RJBx1.bam    Sample_RJBx2.bam 
+            9021998             9281676            10610420             8388551 
+     Min.   1st Qu.    Median      Mean   3rd Qu.      Max. 
+      0.0       0.0       0.0     162.1       4.0 1003757.0 
+
+================ Q2/Q3: RECONSTRUCT THE PAIRED DESIGN ================
+count columns matched to a GSM: 20 of 20 
+                    count_column        gsm        geo_title donor
+Sample_HBBx1.bam    Sample_HBBx1.bam    GSM2332519 HBBX1     HB   
+Sample_HBBx2.bam    Sample_HBBx2.bam    GSM2332520 HBBx2     HB   
+Sample_MJBx1.bam    Sample_MJBx1.bam    GSM2332517 MJBx1     MJ   
+Sample_MJBx2.bam    Sample_MJBx2.bam    GSM2332518 MJBx2     MJ   
+Sample_OCBx1.bam    Sample_OCBx1.bam    GSM2332521 OCBx1     OC   
+Sample_OCBx2.bam    Sample_OCBx2.bam    GSM2332522 OCBx2     OC   
+Sample_Pt10-Bx1.bam Sample_Pt10-Bx1.bam GSM2332531 Pt10Bx1   PT10 
+Sample_Pt10-Bx2.bam Sample_Pt10-Bx2.bam GSM2332532 Pt10Bx2   PT10 
+Sample_Pt12-Bx1.bam Sample_Pt12-Bx1.bam GSM2332533 Pt12Bx1   PT12 
+Sample_Pt12-Bx2.bam Sample_Pt12-Bx2.bam GSM2332534 Pt12Bx2   PT12 
+Sample_Pt2-Bx1.bam  Sample_Pt2-Bx1.bam  GSM2332523 Pt2Bx1    PT2  
+Sample_Pt2-Bx2.bam  Sample_Pt2-Bx2.bam  GSM2332524 Pt2Bx2    PT2  
+Sample_Pt6-Bx1.bam  Sample_Pt6-Bx1.bam  GSM2332525 Pt6Bx1    PT6  
+Sample_Pt6-Bx2.bam  Sample_Pt6-Bx2.bam  GSM2332526 Pt6Bx2    PT6  
+Sample_Pt8-Bx1.bam  Sample_Pt8-Bx1.bam  GSM2332527 Pt8Bx1    PT8  
+Sample_Pt8-Bx2.bam  Sample_Pt8-Bx2.bam  GSM2332528 Pt8Bx2    PT8  
+Sample_Pt9-Bx1.bam  Sample_Pt9-Bx1.bam  GSM2332529 Pt9Bx1    PT9  
+Sample_Pt9-Bx2.bam  Sample_Pt9-Bx2.bam  GSM2332530 Pt9Bx2    PT9  
+Sample_RJBx1.bam    Sample_RJBx1.bam    GSM2332515 RJBx1     RJ   
+Sample_RJBx2.bam    Sample_RJBx2.bam    GSM2332516 RJBx2     RJ   
+                    stage            iri      libsize 
+Sample_HBBx1.bam    pre-reperfusion  negative  9562054
+Sample_HBBx2.bam    post-reperfusion negative  9092999
+Sample_MJBx1.bam    pre-reperfusion  negative 10355042
+Sample_MJBx2.bam    post-reperfusion negative 10227670
+Sample_OCBx1.bam    pre-reperfusion  negative  7578188
+Sample_OCBx2.bam    post-reperfusion negative  7059456
+Sample_Pt10-Bx1.bam pre-reperfusion  positive  7119325
+Sample_Pt10-Bx2.bam post-reperfusion positive  9533693
+Sample_Pt12-Bx1.bam pre-reperfusion  positive  8192677
+Sample_Pt12-Bx2.bam post-reperfusion positive  9155225
+Sample_Pt2-Bx1.bam  pre-reperfusion  negative  9391667
+Sample_Pt2-Bx2.bam  post-reperfusion negative  9976642
+Sample_Pt6-Bx1.bam  pre-reperfusion  negative  9539361
+Sample_Pt6-Bx2.bam  post-reperfusion negative  9628568
+Sample_Pt8-Bx1.bam  pre-reperfusion  negative  9304681
+Sample_Pt8-Bx2.bam  post-reperfusion negative  8400651
+Sample_Pt9-Bx1.bam  pre-reperfusion  positive  9021998
+Sample_Pt9-Bx2.bam  post-reperfusion positive  9281676
+Sample_RJBx1.bam    pre-reperfusion  positive 10610420
+Sample_RJBx2.bam    post-reperfusion positive  8388551
+
+-- Q2: are samples independent? --
+unique donors: 10  samples: 20 
+samples per donor:
+
+ 2 
+10 
+=>  20 samples come from only 10 donors: the samples are NOT independent.
+
+-- Q3: is every one of the 20 directly comparable? --
+stage x IRI cross-tabulation:
+                  iri
+stage              negative positive
+  post-reperfusion        6        4
+  pre-reperfusion         6        4
+donor x stage completeness (1 = present):
+      stage
+donor  post-reperfusion pre-reperfusion
+  HB                  1               1
+  MJ                  1               1
+  OC                  1               1
+  PT10                1               1
+  PT12                1               1
+  PT2                 1               1
+  PT6                 1               1
+  PT8                 1               1
+  PT9                 1               1
+  RJ                  1               1
+library size range:  7,059,456 10,610,420  fold: 1.5 
+
+-- Q4: is raw-read reprocessing possible? --
+per-sample SRA experiment links found: 20 of 20 
+example: SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX2199841 
+=> raw reads are openly accessible for this study (contrast with GSE111889,
+   whose Series states raw data go to dbGaP under controlled access).
+
+04_minicase_GSE87487.R done
+
+
+### sessionInfo
+R version 4.6.1 (2026-06-24 ucrt)
+Platform: x86_64-w64-mingw32/x64
+Running under: Windows 11 x64 (build 26200)
+
+Matrix products: default
+  LAPACK version 3.12.1
+
+locale:
+[1] LC_COLLATE=Chinese (Simplified)_China.utf8 
+[2] LC_CTYPE=Chinese (Simplified)_China.utf8   
+[3] LC_MONETARY=Chinese (Simplified)_China.utf8
+[4] LC_NUMERIC=C                               
+[5] LC_TIME=Chinese (Simplified)_China.utf8    
+
+time zone: Asia/Shanghai
+tzcode source: internal
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+[1] ggplot2_4.0.3       GEOquery_2.80.0     Biobase_2.72.0     
+[4] BiocGenerics_0.58.1 generics_0.1.4     
+
+loaded via a namespace (and not attached):
+ [1] tidyr_1.3.2                 SparseArray_1.12.2         
+ [3] xml2_1.6.0                  lattice_0.22-9             
+ [5] hms_1.1.4                   magrittr_2.0.5             
+ [7] grid_4.6.1                  RColorBrewer_1.1-3         
+ [9] R.oo_1.27.1                 jsonlite_2.0.0             
+[11] Matrix_1.7-5                R.utils_2.13.0             
+[13] limma_3.68.5                purrr_1.2.2                
+[15] viridisLite_0.4.3           scales_1.4.0               
+[17] XML_3.99-0.24               textshaping_1.0.5          
+[19] abind_1.4-8                 cli_3.6.6                  
+[21] rlang_1.3.0                 XVector_0.52.0             
+[23] R.methodsS3_1.8.2           withr_3.0.3                
+[25] DelayedArray_0.38.2         S4Arrays_1.12.0            
+[27] tools_4.6.1                 tzdb_0.5.0                 
+[29] dplyr_1.2.1                 SummarizedExperiment_1.42.0
+[31] curl_8.0.0                  vctrs_0.7.3                
+[33] R6_2.6.1                    matrixStats_1.5.0          
+[35] stats4_4.6.1                lifecycle_1.0.5            
+[37] Seqinfo_1.2.0               S4Vectors_0.50.2           
+[39] IRanges_2.46.0              ragg_1.5.2                 
+[41] pkgconfig_2.0.3             pillar_1.11.1              
+[43] rentrez_1.2.4               gtable_0.3.6               
+[45] data.table_1.18.6.1         glue_1.8.1                 
+[47] systemfonts_1.3.2           statmod_1.5.2              
+[49] tibble_3.3.1                GenomicRanges_1.64.0       
+[51] tidyselect_1.2.1            MatrixGenerics_1.24.0      
+[53] farver_2.1.2                labeling_0.4.3             
+[55] readr_2.2.0                 compiler_4.6.1             
+[57] S7_0.2.2                   
+
+finished: 2026-09-10 16:20:59 CST 

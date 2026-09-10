@@ -1,0 +1,252 @@
+"sample_col","gsm","title","diagnosis","subject_id","biopsy_site","visit_week","sex","age"
+"CSM5FZ1F","GSM3043378","CSM5FZ1F","Crohn's Disease",NA,"Ileum",NA,"Female",NA
+"CSM5FZ1G","GSM3043377","CSM5FZ1G","Crohn's Disease",NA,"Sigmoid Colon",NA,"Female",NA
+"CSM5FZ1H","GSM3043380","CSM5FZ1H","Crohn's Disease",NA,"Sigmoid Colon",NA,"Female",NA
+"CSM5FZ1I","GSM3043379","CSM5FZ1I","Crohn's Disease",NA,"Rectum",NA,"Female",NA
+"CSM5FZ1J","GSM3043381","CSM5FZ1J","Ulcerative Colitis",NA,"Ileum",NA,"Female",NA
+"CSM5FZ1K","GSM3043382","CSM5FZ1K","Ulcerative Colitis",NA,"Rectum",NA,"Female",NA
+"CSM5FZ1L","GSM3043383","CSM5FZ1L","Ulcerative Colitis",NA,"Sigmoid Colon",NA,"Female",NA
+"CSM5FZ1M","GSM3043385","CSM5FZ1M","Ulcerative Colitis",NA,"Ileum",NA,"Female",NA
+"CSM5FZ1N","GSM3043386","CSM5FZ1N","Ulcerative Colitis",NA,"Rectum",NA,"Female",NA
+"CSM5FZ1O","GSM3043384","CSM5FZ1O","Ulcerative Colitis",NA,"Sigmoid Colon",NA,"Female",NA
+"CSM5FZ1Q","GSM3043387","CSM5FZ1Q","Ulcerative Colitis",NA,"Ileum",NA,"Female",NA
+"CSM5FZ1R","GSM3043388","CSM5FZ1R","Ulcerative Colitis",NA,"Rectum",NA,"Female",NA
+"CSM5FZ1S","GSM3043389","CSM5FZ1S","Ulcerative Colitis",NA,"Sigmoid Colon",NA,"Female",NA
+"CSM5FZ1T","GSM3043391","CSM5FZ1T","Ulcerative Colitis",NA,"Ileum",NA,"Male",NA
+"CSM5FZ1U","GSM3043392","CSM5FZ1U","Ulcerative Colitis",NA,"Rectum",NA,"Male",NA
+"CSM5FZ1V","GSM3043393","CSM5FZ1V","Ulcerative Colitis",NA,"Sigmoid Colon",NA,"Male",NA
+"CSM5FZ1W","GSM3043390","CSM5FZ1W","Ulcerative Colitis",NA,"Sigmoid Colon",NA,"Male",NA
+"CSM5FZ22","GSM3043394","CSM5FZ22","Crohn's Disease",NA,"Ileum",NA,"Female",NA
+"CSM5FZ23","GSM3043396","CSM5FZ23","Crohn's Disease",NA,"Sigmoid Colon",NA,"Female",NA
+"CSM5FZ24","GSM3043395","CSM5FZ24","Crohn's Disease",NA,"Rectum",NA,"Female",NA
+"CSM5FZ27","GSM3043397","CSM5FZ27","Crohn's Disease",NA,"Ileum",NA,"Female",NA
+"CSM5FZ28","GSM3043398","CSM5FZ28","Crohn's Disease",NA,"Rectum",NA,"Female",NA
+"CSM5FZ29","GSM3043399","CSM5FZ29","Crohn's Disease",NA,"Sigmoid Colon",NA,"Female",NA
+"CSM5FZ2A","GSM3043400","CSM5FZ2A","Ulcerative Colitis",NA,"Ileum",NA,"Female",NA
+"CSM5FZ2B","GSM3043401","CSM5FZ2B","Ulcerative Colitis",NA,"Rectum",NA,"Female",NA
+"CSM5FZ2C","GSM3043402","CSM5FZ2C","Ulcerative Colitis",NA,"Sigmoid Colon",NA,"Female",NA
+"CSM5FZ2D","GSM3043403","CSM5FZ2D","Crohn's Disease",NA,"Ileum",NA,"Female",NA
+"CSM5FZ2E","GSM3043404","CSM5FZ2E","Crohn's Disease",NA,"Rectum",NA,"Female",NA
+"CSM5FZ2F","GSM3043405","CSM5FZ2F","Crohn's Disease",NA,"Sigmoid Colon",NA,"Female",NA
+"CSM5FZ2G","GSM3043407","CSM5FZ2G","Ulcerative Colitis",NA,"Ileum",NA,"Female",NA
+"CSM5FZ2H","GSM3043408","CSM5FZ2H","Ulcerative Colitis",NA,"Rectum",NA,"Female",NA
+"CSM5FZ2I","GSM3043406","CSM5FZ2I","Ulcerative Colitis",NA,"Sigmoid Colon",NA,"Female",NA
+"CSM5FZ2L","GSM3043410","CSM5FZ2L","Ulcerative Colitis",NA,"Ileum",NA,"Female",NA
+"CSM5FZ2M","GSM3043411","CSM5FZ2M","Ulcerative Colitis",NA,"Rectum",NA,"Female",NA
+"CSM5FZ2N","GSM3043409","CSM5FZ2N","Ulcerative Colitis",NA,"Cecum",NA,"Female",NA
+"CSM5FZ2O","GSM3043412","CSM5FZ2O","Crohn's Disease",NA,"Ileum",NA,"Female",NA
+"CSM5FZ2P","GSM3043413","CSM5FZ2P","Crohn's Disease",NA,"Rectum",NA,"Female",NA
+"CSM5FZ2Q","GSM3043414","CSM5FZ2Q","Crohn's Disease",NA,"Sigmoid Colon",NA,"Female",NA
+"CSM5FZ2R","GSM3043415","CSM5FZ2R","Crohn's Disease",NA,"Ileum",NA,"Male",NA
+"CSM5FZ2S","GSM3043416","CSM5FZ2S","Crohn's Disease",NA,"Rectum",NA,"Male",NA
+"CSM5FZ2T","GSM3043417","CSM5FZ2T","Crohn's Disease",NA,"Sigmoid Colon",NA,"Male",NA
+"CSM5FZ34","GSM3043419","CSM5FZ34","Crohn's Disease",NA,"Ileum",NA,"Female",NA
+"CSM5FZ35","GSM3043420","CSM5FZ35","Crohn's Disease",NA,"Rectum",NA,"Female",NA
+"CSM5FZ36","GSM3043418","CSM5FZ36","Crohn's Disease",NA,"Descending (left-sided) colon",NA,"Female",NA
+"CSM5FZ37","GSM3043421","CSM5FZ37","Crohn's Disease",NA,"Cecum",NA,"Female",NA
+"CSM5FZ38","GSM3043422","CSM5FZ38","Non IBD",NA,"Ileum",NA,"Male",NA
+"CSM5FZ39","GSM3043423","CSM5FZ39","Non IBD",NA,"Rectum",NA,"Male",NA
+"CSM5FZ3A","GSM3043424","CSM5FZ3A","Crohn's Disease",NA,"Terminal ileum",NA,"Male",NA
+"CSM5FZ3B","GSM3043425","CSM5FZ3B","Crohn's Disease",NA,"Ileum",NA,"Male",NA
+"CSM5FZ3C","GSM3043426","CSM5FZ3C","Crohn's Disease",NA,"Rectum",NA,"Male",NA
+"CSMDRVXF","GSM3043427","CSMDRVXF","Crohn's Disease",NA,"Ileum",NA,"Female",NA
+"CSMDRVXG","GSM3043428","CSMDRVXG","Crohn's Disease",NA,"Rectum",NA,"Female",NA
+"CSMDRVXH","GSM3043429","CSMDRVXH","Crohn's Disease",NA,"Sigmoid Colon",NA,"Female",NA
+"CSMDRVXI","GSM3043430","CSMDRVXI","Crohn's Disease",NA,"Ileum",NA,"Male",NA
+"CSMDRVXJ","GSM3043431","CSMDRVXJ","Crohn's Disease",NA,"Rectum",NA,"Male",NA
+"CSMDRVXK","GSM3043433","CSMDRVXK","Ulcerative Colitis",NA,"Ileum",NA,"Male",NA
+"CSMDRVXL","GSM3043435","CSMDRVXL","Ulcerative Colitis",NA,"Transverse colon",NA,"Male",NA
+"CSMDRVXM","GSM3043434","CSMDRVXM","Ulcerative Colitis",NA,"Rectum",NA,"Male",NA
+"CSMDRVXN","GSM3043432","CSMDRVXN","Ulcerative Colitis",NA,"Descending (left-sided) colon",NA,"Male",NA
+"CSMDRVXO","GSM3043437","CSMDRVXO","Crohn's Disease",NA,"Ileum",NA,"Male",NA
+"CSMDRVXP","GSM3043436","CSMDRVXP","Crohn's Disease",NA,"Terminal ileum",NA,"Male",NA
+"CSMDRVXQ","GSM3043439","CSMDRVXQ","Crohn's Disease",NA,"Sigmoid Colon",NA,"Male",NA
+"CSMDRVXR","GSM3043438","CSMDRVXR","Crohn's Disease",NA,"Rectum",NA,"Male",NA
+"CSMDRVXS","GSM3043440","CSMDRVXS","Crohn's Disease",NA,"Ileum",NA,"Female",NA
+"CSMDRVXT","GSM3043442","CSMDRVXT","Crohn's Disease",NA,"Sigmoid Colon",NA,"Female",NA
+"CSMDRVXU","GSM3043441","CSMDRVXU","Crohn's Disease",NA,"Rectum",NA,"Female",NA
+"CSMDRVXX","GSM3043443","CSMDRVXX","Ulcerative Colitis",NA,"Ileum",NA,"Female",NA
+"CSMDRVXY","GSM3043446","CSMDRVXY","Ulcerative Colitis",NA,"Ileum",NA,"Female",NA
+"CSMDRVXZ","GSM3043448","CSMDRVXZ","Ulcerative Colitis",NA,"Ascending (right-sided) colon",NA,"Female",NA
+"CSMDRVY1","GSM3043447","CSMDRVY1","Ulcerative Colitis",NA,"Rectum",NA,"Female",NA
+"CSMDRVY2","GSM3043450","CSMDRVY2","Crohn's Disease",NA,"Ileum",NA,"Male",NA
+"CSMDRVY3","GSM3043451","CSMDRVY3","Crohn's Disease",NA,"Rectum",NA,"Male",NA
+"CSMDRVY4","GSM3043449","CSMDRVY4","Crohn's Disease",NA,"Terminal ileum",NA,"Male",NA
+"CSMDRVY5","GSM3043453","CSMDRVY5","Ulcerative Colitis",NA,"Ileum",NA,"Female",NA
+"CSMDRVY6","GSM3043454","CSMDRVY6","Ulcerative Colitis",NA,"Rectum",NA,"Female",NA
+"CSMDRVY7","GSM3043452","CSMDRVY7","Ulcerative Colitis",NA,"Sigmoid Colon",NA,"Female",NA
+"CSMDTZ4X","GSM3043445","CSMDTZ4X","Ulcerative Colitis",NA,"Sigmoid Colon",NA,"Female",NA
+"CSMDTZ4Y","GSM3043444","CSMDTZ4Y","Ulcerative Colitis",NA,"Rectum",NA,"Female",NA
+"ESM5GEY7","GSM3043463","ESM5GEY7","Crohn's Disease",NA,"Rectum",NA,"Female",NA
+"ESM5GEY8","GSM3043462","ESM5GEY8","Crohn's Disease",NA,"Ileum",NA,"Female",NA
+"ESM5GEY9","GSM3043461","ESM5GEY9","Crohn's Disease",NA,"Descending (left-sided) colon",NA,"Female",NA
+"ESM5GEYA","GSM3043460","ESM5GEYA","Crohn's Disease",NA,"Rectum",NA,"Female",NA
+"ESM5GEYB","GSM3043459","ESM5GEYB","Crohn's Disease",NA,"Ileum",NA,"Female",NA
+"ESM5GEYI","GSM3043455","ESM5GEYI","Ulcerative Colitis",NA,"Transverse colon",NA,"Female",NA
+"ESM5GEYK","GSM3043456","ESM5GEYK","Ulcerative Colitis",NA,"Ileum",NA,"Female",NA
+"ESM5GEYL","GSM3043457","ESM5GEYL","Ulcerative Colitis",NA,"Rectum",NA,"Female",NA
+"ESM6ZK8Z","GSM3043458","ESM6ZK8Z","Crohn's Disease",NA,"Cecum",NA,"Female",NA
+"HSM5FZAE","GSM3043465","HSM5FZAE","Crohn's Disease",NA,"Rectum",NA,"Male",NA
+"HSM5FZAH","GSM3043464","HSM5FZAH","Crohn's Disease",NA,"Sigmoid Colon",NA,"Male",NA
+"HSM5FZAM","GSM3043466","HSM5FZAM","Crohn's Disease",NA,"Ascending (right-sided) colon",NA,"Male",NA
+"HSM5FZAN","GSM3043467","HSM5FZAN","Crohn's Disease",NA,"Rectum",NA,"Male",NA
+"HSM5FZAQ","GSM3043471","HSM5FZAQ","Crohn's Disease",NA,"Ileum",NA,"Male",NA
+"HSM5FZAR","GSM3043472","HSM5FZAR","Crohn's Disease",NA,"Rectum",NA,"Male",NA
+"HSM5FZAS","GSM3043497","HSM5FZAS","Crohn's Disease",NA,"Rectum",NA,"Female",NA
+"HSM5FZAT","GSM3043496","HSM5FZAT","Crohn's Disease",NA,"Ileum",NA,"Female",NA
+"HSM5FZAU","GSM3043495","HSM5FZAU","Crohn's Disease",NA,"Ascending (right-sided) colon",NA,"Female",NA
+"HSM5FZAV","GSM3043493","HSM5FZAV","Non IBD",NA,"Rectum",NA,"Female",NA
+"HSM5FZAW","GSM3043494","HSM5FZAW","Non IBD",NA,"Transverse colon",NA,"Female",NA
+"HSM5FZAX","GSM3043492","HSM5FZAX","Non IBD",NA,"Ileum",NA,"Female",NA
+"HSM5FZAY","GSM3043490","HSM5FZAY","Crohn's Disease",NA,"Ileum",NA,"Male",NA
+"HSM5FZAZ","GSM3043491","HSM5FZAZ","Crohn's Disease",NA,"Rectum",NA,"Male",NA
+"HSM5FZB1","GSM3043489","HSM5FZB1","Crohn's Disease",NA,"Descending (left-sided) colon",NA,"Male",NA
+"HSM5FZB2","GSM3043488","HSM5FZB2","Crohn's Disease",NA,"Rectum",NA,"Female",NA
+"HSM5FZB3","GSM3043487","HSM5FZB3","Crohn's Disease",NA,"Ileum",NA,"Female",NA
+"HSM5FZB4","GSM3043485","HSM5FZB4","Non IBD",NA,"Ileum",NA,"Male",NA
+"HSM5FZB5","GSM3043486","HSM5FZB5","Non IBD",NA,"Rectum",NA,"Male",NA
+"HSM5FZBB","GSM3043484","HSM5FZBB","Ulcerative Colitis",NA,"Rectum",NA,"Male",NA
+"HSM5FZBC","GSM3043483","HSM5FZBC","Ulcerative Colitis",NA,"Ileum",NA,"Male",NA
+"HSM5FZBD","GSM3043482","HSM5FZBD","Non IBD",NA,"Rectum",NA,"Female",NA
+"HSM5FZBE","GSM3043481","HSM5FZBE","Non IBD",NA,"Ileum",NA,"Female",NA
+"HSM5FZBF","GSM3043473","HSM5FZBF","Crohn's Disease",NA,"Ileum",NA,"Female",NA
+"HSM5FZBG","GSM3043474","HSM5FZBG","Crohn's Disease",NA,"Rectum",NA,"Female",NA
+"HSM5FZBH","GSM3043478","HSM5FZBH","Non IBD",NA,"Rectum",NA,"Female",NA
+"HSM5FZBI","GSM3043477","HSM5FZBI","Non IBD",NA,"Ileum",NA,"Female",NA
+"HSM6S4FN","GSM3043498","HSM6S4FN","Non IBD",NA,"Ileum",NA,"Female",NA
+"HSM6S4FO","GSM3043500","HSM6S4FO","Non IBD",NA,"Ascending (right-sided) colon",NA,"Female",NA
+"HSM6S4FP","GSM3043499","HSM6S4FP","Non IBD",NA,"Rectum",NA,"Female",NA
+"HSM6S4FQ","GSM3043501","HSM6S4FQ","Ulcerative Colitis",NA,"Ileum",NA,"Female",NA
+"HSM6S4FR","GSM3043503","HSM6S4FR","Ulcerative Colitis",NA,"Transverse colon",NA,"Female",NA
+"HSM6S4FS","GSM3043502","HSM6S4FS","Ulcerative Colitis",NA,"Rectum",NA,"Female",NA
+"HSM6S4FT","GSM3043507","HSM6S4FT","Crohn's Disease",NA,"Ileum",NA,"Male",NA
+"HSM6S4FU","GSM3043508","HSM6S4FU","Crohn's Disease",NA,"Rectum",NA,"Male",NA
+"HSM6S4FY","GSM3043509","HSM6S4FY","Non IBD",NA,"Ileum",NA,"Female",NA
+"HSM6S4FZ","GSM3043511","HSM6S4FZ","Non IBD",NA,"Transverse colon",NA,"Female",NA
+"HSM6S4G1","GSM3043510","HSM6S4G1","Non IBD",NA,"Rectum",NA,"Female",NA
+"HSM6S4G2","GSM3043512","HSM6S4G2","Non IBD",NA,"Ileum",NA,"Male",NA
+"HSM6S4G3","GSM3043514","HSM6S4G3","Non IBD",NA,"Descending (left-sided) colon",NA,"Male",NA
+"HSM6S4G4","GSM3043513","HSM6S4G4","Non IBD",NA,"Rectum",NA,"Male",NA
+"HSM6S4G5","GSM3043517","HSM6S4G5","Non IBD",NA,"Transverse colon",NA,"Male",NA
+"HSM6S4G6","GSM3043515","HSM6S4G6","Non IBD",NA,"Ileum",NA,"Male",NA
+"HSM6S4G7","GSM3043516","HSM6S4G7","Non IBD",NA,"Rectum",NA,"Male",NA
+"HSM6S4GB","GSM3043475","HSM6S4GB","Crohn's Disease",NA,"Ileum",NA,"Female",NA
+"HSM6S4GC","GSM3043476","HSM6S4GC","Crohn's Disease",NA,"Rectum",NA,"Female",NA
+"HSM6S4GG","GSM3043519","HSM6S4GG","Ulcerative Colitis",NA,"Ileum",NA,"Male",NA
+"HSM6S4GH","GSM3043518","HSM6S4GH","Ulcerative Colitis",NA,"Descending (left-sided) colon",NA,"Male",NA
+"HSM6S4GI","GSM3043520","HSM6S4GI","Ulcerative Colitis",NA,"Rectum",NA,"Male",NA
+"HSM6S4GJ","GSM3043521","HSM6S4GJ","Crohn's Disease",NA,"Ileum",NA,"Female",NA
+"HSM6S4GK","GSM3043523","HSM6S4GK","Crohn's Disease",NA,"Transverse colon",NA,"Female",NA
+"HSM6S4GL","GSM3043522","HSM6S4GL","Crohn's Disease",NA,"Rectum",NA,"Female",NA
+"HSM6S4GM","GSM3043479","HSM6S4GM","Non IBD",NA,"Ileum",NA,"Female",NA
+"HSM6S4GN","GSM3043480","HSM6S4GN","Non IBD",NA,"Rectum",NA,"Female",NA
+"HSM6S4GO","GSM3043504","HSM6S4GO","Ulcerative Colitis",NA,"Ileum",NA,"Female",NA
+"HSM6S4GP","GSM3043506","HSM6S4GP","Ulcerative Colitis",NA,"Transverse colon",NA,"Female",NA
+"HSM6S4GQ","GSM3043505","HSM6S4GQ","Ulcerative Colitis",NA,"Rectum",NA,"Female",NA
+"HSM7H3WH","GSM3043525","HSM7H3WH","Crohn's Disease",NA,"Rectum",NA,"Male",NA
+"HSM7H3WJ","GSM3043524","HSM7H3WJ","Crohn's Disease",NA,"Ileum",NA,"Male",NA
+"HSM7H3WK","GSM3043528","HSM7H3WK","Crohn's Disease",NA,"Transverse colon",NA,"Male",NA
+"HSM7H3WL","GSM3043527","HSM7H3WL","Crohn's Disease",NA,"Rectum",NA,"Male",NA
+"HSM7H3WM","GSM3043526","HSM7H3WM","Crohn's Disease",NA,"Ileum",NA,"Male",NA
+"HSM7H3WN","GSM3043530","HSM7H3WN","Crohn's Disease",NA,"Ileum",NA,"Male",NA
+"HSM7H3WO","GSM3043529","HSM7H3WO","Crohn's Disease",NA,"Sigmoid Colon",NA,"Male",NA
+"HSM7H3WP","GSM3043531","HSM7H3WP","Crohn's Disease",NA,"Rectum",NA,"Male",NA
+"HSM7H3WQ","GSM3043470","HSM7H3WQ","Crohn's Disease",NA,"Ascending (right-sided) colon",NA,"Male",NA
+"HSM7H3WR","GSM3043468","HSM7H3WR","Crohn's Disease",NA,"Ileum",NA,"Male",NA
+"HSM7H3WS","GSM3043469","HSM7H3WS","Crohn's Disease",NA,"Rectum",NA,"Male",NA
+"HSM7H3WW","GSM3043533","HSM7H3WW","Ulcerative Colitis",NA,"Ileum",NA,"Male",NA
+"HSM7H3WX","GSM3043532","HSM7H3WX","Ulcerative Colitis",NA,"Descending (left-sided) colon",NA,"Male",NA
+"HSM7H3WY","GSM3043534","HSM7H3WY","Ulcerative Colitis",NA,"Rectum",NA,"Male",NA
+"HSM9JBU","GSM3043537","HSM9JBU","Crohn's Disease",NA,"Rectum",NA,"Male",NA
+"HSM9JBV","GSM3043536","HSM9JBV","Crohn's Disease",NA,"Ileum",NA,"Male",NA
+"HSM9JBW","GSM3043535","HSM9JBW","Crohn's Disease",NA,"Cecum",NA,"Male",NA
+"HSM9JTBY","GSM3043538","HSM9JTBY","Crohn's Disease",NA,"Ascending (right-sided) colon",NA,"Female",NA
+"HSM9JTBZ","GSM3043539","HSM9JTBZ","Crohn's Disease",NA,"Ileum",NA,"Female",NA
+"HSM9JTC1","GSM3043541","HSM9JTC1","Ulcerative Colitis",NA,"Ileum",NA,"Female",NA
+"HSM9JTC2","GSM3043543","HSM9JTC2","Ulcerative Colitis",NA,"Non-inflamed",NA,"Female",NA
+"HSM9JTC3","GSM3043542","HSM9JTC3","Ulcerative Colitis",NA,"Rectum",NA,"Female",NA
+"HSM9JTC7","GSM3043545","HSM9JTC7","Ulcerative Colitis",NA,"Descending (left-sided) colon",NA,"Male",NA
+"HSM9JTC8","GSM3043544","HSM9JTC8","Ulcerative Colitis",NA,"Rectum",NA,"Male",NA
+"HSM9UBMN","GSM3043547","HSM9UBMN","Crohn's Disease",NA,"Ileum",NA,"Female",NA
+"HSM9UBMO","GSM3043546","HSM9UBMO","Crohn's Disease",NA,"Transverse colon",NA,"Female",NA
+"HSM9UBMP","GSM3043548","HSM9UBMP","Crohn's Disease",NA,"Rectum",NA,"Female",NA
+"HSM9UBMQ","GSM3043550","HSM9UBMQ","Ulcerative Colitis",NA,"Rectum",NA,"Male",NA
+"HSM9UBMR","GSM3043549","HSM9UBMR","Ulcerative Colitis",NA,"Ileum",NA,"Male",NA
+"HSM9UBMS","GSM3043551","HSM9UBMS","Non IBD",NA,"Ileum",NA,"Female",NA
+"HSM9UBMT","GSM3043553","HSM9UBMT","Non IBD",NA,"Transverse colon",NA,"Female",NA
+"HSM9UBMU","GSM3043552","HSM9UBMU","Non IBD",NA,"Rectum",NA,"Female",NA
+"HSM9JTBX","GSM3043540","HSM9JTBX","Crohn's Disease",NA,"Rectum",NA,"Female",NA
+"MSM5CFCU","GSM3043555","MSM5CFCU","Crohn's Disease",NA,"Rectum",NA,"Female",NA
+"MSM5CFCV","GSM3043554","MSM5CFCV","Crohn's Disease",NA,"Ileum",NA,"Female",NA
+"MSM5CFCW","GSM3043556","MSM5CFCW","Crohn's Disease",NA,"Transverse colon",NA,"Female",NA
+"MSM5CFD6","GSM3043560","MSM5CFD6","Crohn's Disease",NA,"Ileum",NA,"Male",NA
+"MSM5CFD7","GSM3043561","MSM5CFD7","Crohn's Disease",NA,"Rectum",NA,"Male",NA
+"MSM5LWJ3","GSM3043574","MSM5LWJ3","Crohn's Disease",NA,"Ileum",NA,"Female",NA
+"MSM5LWJ4","GSM3043575","MSM5LWJ4","Crohn's Disease",NA,"Rectum",NA,"Female",NA
+"MSM5LWJG","GSM3043578","MSM5LWJG","Crohn's Disease",NA,"Ileum",NA,"Female",NA
+"MSM5LWJH","GSM3043579","MSM5LWJH","Crohn's Disease",NA,"Rectum",NA,"Female",NA
+"MSM5LWJN","GSM3043580","MSM5LWJN","Non IBD",NA,"Ileum",NA,"Female",NA
+"MSM5LWJO","GSM3043581","MSM5LWJO","Non IBD",NA,"Rectum",NA,"Female",NA
+"MSM5LWJS","GSM3043583","MSM5LWJS","Non IBD",NA,"Rectum",NA,"Male",NA
+"MSM5LWJT","GSM3043582","MSM5LWJT","Non IBD",NA,"Ileum",NA,"Male",NA
+"MSM5LWJU","GSM3043585","MSM5LWJU","Non IBD",NA,"Rectum",NA,"Male",NA
+"MSM5LWJV","GSM3043584","MSM5LWJV","Non IBD",NA,"Ileum",NA,"Male",NA
+"MSM5LWJZ","GSM3043558","MSM5LWJZ","Crohn's Disease",NA,"Rectum",NA,"Female",NA
+"MSM5LWKD","GSM3043557","MSM5LWKD","Crohn's Disease",NA,"Rectum",NA,"Female",NA
+"MSM5LWKE","GSM3043559","MSM5LWKE","Crohn's Disease",NA,"Descending (left-sided) colon",NA,"Female",NA
+"MSM5LWKF","GSM3043589","MSM5LWKF","Non IBD",NA,"Rectum",NA,"Female",NA
+"MSM5LWKG","GSM3043588","MSM5LWKG","Non IBD",NA,"Ileum",NA,"Female",NA
+"MSM5LWKQ","GSM3043565","MSM5LWKQ","Crohn's Disease",NA,"Ileum",NA,"Male",NA
+"MSM5LWKR","GSM3043564","MSM5LWKR","Crohn's Disease",NA,"Cecum",NA,"Male",NA
+"MSM5LWKW","GSM3043562","MSM5LWKW","Crohn's Disease",NA,"Rectum",NA,"Male",NA
+"MSM5LWKX","GSM3043563","MSM5LWKX","Crohn's Disease",NA,"Rectum",NA,"Male",NA
+"MSM5LWL1","GSM3043570","MSM5LWL1","Ulcerative Colitis",NA,"Rectum",NA,"Female",NA
+"MSM5LWL2","GSM3043571","MSM5LWL2","Ulcerative Colitis",NA,"Ascending (right-sided) colon",NA,"Female",NA
+"MSM5LWL3","GSM3043566","MSM5LWL3","Crohn's Disease",NA,"Ileum",NA,"Female",NA
+"MSM5LWL4","GSM3043567","MSM5LWL4","Crohn's Disease",NA,"Rectum",NA,"Female",NA
+"MSM5LWL5","GSM3043569","MSM5LWL5","Ulcerative Colitis",NA,"Ileum",NA,"Female",NA
+"MSM5LWL6","GSM3043572","MSM5LWL6","Crohn's Disease",NA,"Ileum",NA,"Male",NA
+"MSM5LWL7","GSM3043573","MSM5LWL7","Crohn's Disease",NA,"Rectum",NA,"Male",NA
+"MSM719M5","GSM3043586","MSM719M5","Non IBD",NA,"Ileum",NA,"Male",NA
+"MSM719M6","GSM3043587","MSM719M6","Non IBD",NA,"Rectum",NA,"Male",NA
+"MSM719MA","GSM3043590","MSM719MA","Non IBD",NA,"Rectum",NA,"Male",NA
+"MSM719MD","GSM3043592","MSM719MD","Ulcerative Colitis",NA,"Transverse colon",NA,"Male",NA
+"MSM719ME","GSM3043591","MSM719ME","Ulcerative Colitis",NA,"Rectum",NA,"Male",NA
+"MSM719MJ","GSM3043568","MSM719MJ","Crohn's Disease",NA,"Sigmoid Colon",NA,"Female",NA
+"MSM719MR","GSM3043600","MSM719MR","Non IBD",NA,"Rectum",NA,"Male",NA
+"MSM719MS","GSM3043596","MSM719MS","Crohn's Disease",NA,"Rectum",NA,"Female",NA
+"MSM719MT","GSM3043595","MSM719MT","Crohn's Disease",NA,"Ileum",NA,"Female",NA
+"MSM719MU","GSM3043599","MSM719MU","Non IBD",NA,"Ileum",NA,"Male",NA
+"MSM719MZ","GSM3043598","MSM719MZ","Ulcerative Colitis",NA,"Rectum",NA,"Female",NA
+"MSM719N1","GSM3043597","MSM719N1","Ulcerative Colitis",NA,"Ileum",NA,"Female",NA
+"MSM719N4","GSM3043576","MSM719N4","Crohn's Disease",NA,"Ileum",NA,"Female",NA
+"MSM719N5","GSM3043577","MSM719N5","Crohn's Disease",NA,"Rectum",NA,"Female",NA
+"MSM719NA","GSM3043601","MSM719NA","Non IBD",NA,"Rectum",NA,"Male",NA
+"MSM719NO","GSM3043603","MSM719NO","Non IBD",NA,"Rectum",NA,"Female",NA
+"MSM719NP","GSM3043602","MSM719NP","Non IBD",NA,"Ileum",NA,"Female",NA
+"MSMAKNES","GSM3043594","MSMAKNES","Ulcerative Colitis",NA,"Rectum",NA,"Male",NA
+"MSMAKNET","GSM3043593","MSMAKNET","Ulcerative Colitis",NA,"Ascending (right-sided) colon",NA,"Male",NA
+"PSM6XBZC","GSM3043605","PSM6XBZC","Crohn's Disease",NA,"Rectum",NA,"Male",NA
+"PSM6XBZD","GSM3043604","PSM6XBZD","Crohn's Disease",NA,"Ileum",NA,"Male",NA
+"PSM6XBZI","GSM3043607","PSM6XBZI","Crohn's Disease",NA,"Rectum",NA,"Male",NA
+"PSM6XBZJ","GSM3043606","PSM6XBZJ","Crohn's Disease",NA,"Ileum",NA,"Male",NA
+"PSM6XBZO","GSM3043609","PSM6XBZO","Ulcerative Colitis",NA,"Rectum",NA,"Female",NA
+"PSM6XBZP","GSM3043608","PSM6XBZP","Ulcerative Colitis",NA,"Ileum",NA,"Female",NA
+"PSM6XBZQ","GSM3043611","PSM6XBZQ","Ulcerative Colitis",NA,"Rectum",NA,"Male",NA
+"PSM6XBZR","GSM3043610","PSM6XBZR","Ulcerative Colitis",NA,"Ileum",NA,"Male",NA
+"PSM6XBZW","GSM3043613","PSM6XBZW","Non IBD",NA,"Rectum",NA,"Male",NA
+"PSM6XBZX","GSM3043612","PSM6XBZX","Non IBD",NA,"Ileum",NA,"Male",NA
+"PSM6XBZY","GSM3043616","PSM6XBZY","Crohn's Disease",NA,"Ileum",NA,"Male",NA
+"PSM6XBZZ","GSM3043615","PSM6XBZZ","Crohn's Disease",NA,"Rectum",NA,"Male",NA
+"PSM6XC11","GSM3043618","PSM6XC11","Non IBD",NA,"Ileum",NA,"Male",NA
+"PSM6XC12","GSM3043619","PSM6XC12","Non IBD",NA,"Rectum",NA,"Male",NA
+"PSM6XC13","GSM3043620","PSM6XC13","Non IBD",NA,"Ileum",NA,"Female",NA
+"PSM6XC14","GSM3043621","PSM6XC14","Non IBD",NA,"Rectum",NA,"Female",NA
+"PSM6XC15","GSM3043614","PSM6XC15","Crohn's Disease",NA,"Transverse colon",NA,"Male",NA
+"PSM7J4EU","GSM3043623","PSM7J4EU","Crohn's Disease",NA,"Rectum",NA,"Male",NA
+"PSM7J4EV","GSM3043622","PSM7J4EV","Crohn's Disease",NA,"Ileum",NA,"Male",NA
+"PSM7J4EW","GSM3043625","PSM7J4EW","Ulcerative Colitis",NA,"Rectum",NA,"Male",NA
+"PSM7J4EX","GSM3043624","PSM7J4EX","Ulcerative Colitis",NA,"Ileum",NA,"Male",NA
+"PSM7J4F3","GSM3043627","PSM7J4F3","Crohn's Disease",NA,"Rectum",NA,"Male",NA
+"PSM7J4F4","GSM3043626","PSM7J4F4","Crohn's Disease",NA,"Ileum",NA,"Male",NA
+"PSM7J4FL","GSM3043617","PSM7J4FL","Crohn's Disease",NA,"Rectum",NA,"Male",NA
