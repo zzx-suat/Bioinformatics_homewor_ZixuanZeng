@@ -1,0 +1,17 @@
+{
+  "event": "sync",
+  "synced_at": "2026-09-06T05:07:11Z",
+  "student_id": "24000114",
+  "display_name": "曾梓轩",
+  "emp_version": "9.0.4",
+  "github_login": "zzx-suat",
+  "github_repo": "zzx-suat/Bioinformatics_homewor_ZixuanZeng",
+  "github_branch": "main",
+  "week_dir": "Week_02",
+  "track": "transcriptomics",
+  "assignment_type": "weekly",
+  "assignment_id": "week_02",
+  "assignment_title": "第2周",
+  "git_path": "EMP2026/Week_02/transcriptomics/weekly/runs/2026-09-06T05-07-11-114Z-nhd6b1",
+  "run_id": "2026-09-06T05-07-11-114Z-nhd6b1"
+}

@@ -1,0 +1,126 @@
+{
+  "success": true,
+  "user_id": "5Cg15RA8YChX9Vse9ZJkcwmz",
+  "events": [
+    {
+      "event_type": "api_call",
+      "path": "/llm/openrouter_verified",
+      "method": "GET",
+      "total_ms": 37,
+      "backend_ms": 8.1,
+      "case_id": null,
+      "experiment": null,
+      "user_id": "5Cg15RA8YChX9Vse9ZJkcwmz",
+      "role": "local",
+      "ts": "2026-08-30T23:48:31.323+0800"
+    },
+    {
+      "event_type": "api_call",
+      "path": "/clinical/vars_standalone/5Cg15RA8YChX9Vse9ZJkcwmz",
+      "method": "GET",
+      "total_ms": 65,
+      "backend_ms": 41.2,
+      "case_id": null,
+      "experiment": null,
+      "user_id": "5Cg15RA8YChX9Vse9ZJkcwmz",
+      "role": "local",
+      "ts": "2026-08-30T23:48:31.446+0800"
+    },
+    {
+      "event_type": "api_call",
+      "path": "/llm/openrouter_verified",
+      "method": "GET",
+      "total_ms": 19,
+      "backend_ms": 4.7,
+      "case_id": null,
+      "experiment": null,
+      "user_id": "5Cg15RA8YChX9Vse9ZJkcwmz",
+      "role": "local",
+      "ts": "2026-08-31T00:00:04.387+0800"
+    },
+    {
+      "event_type": "api_call",
+      "path": "/clinical/vars_standalone/5Cg15RA8YChX9Vse9ZJkcwmz",
+      "method": "GET",
+      "total_ms": 9,
+      "backend_ms": 0.9,
+      "case_id": null,
+      "experiment": null,
+      "user_id": "5Cg15RA8YChX9Vse9ZJkcwmz",
+      "role": "local",
+      "ts": "2026-08-31T00:00:04.471+0800"
+    },
+    {
+      "event_type": "api_call",
+      "path": "/llm/openrouter_verified",
+      "method": "GET",
+      "total_ms": 19,
+      "backend_ms": 7.6,
+      "case_id": null,
+      "experiment": null,
+      "user_id": "5Cg15RA8YChX9Vse9ZJkcwmz",
+      "role": "local",
+      "ts": "2026-09-02T11:18:13.165+0800"
+    },
+    {
+      "event_type": "api_call",
+      "path": "/clinical/vars_standalone/5Cg15RA8YChX9Vse9ZJkcwmz",
+      "method": "GET",
+      "total_ms": 72,
+      "backend_ms": 42.1,
+      "case_id": null,
+      "experiment": null,
+      "user_id": "5Cg15RA8YChX9Vse9ZJkcwmz",
+      "role": "local",
+      "ts": "2026-09-02T11:18:13.898+0800"
+    },
+    {
+      "event_type": "api_call",
+      "path": "/llm/openrouter_verified",
+      "method": "GET",
+      "total_ms": 27,
+      "backend_ms": 7,
+      "case_id": null,
+      "experiment": null,
+      "user_id": "5Cg15RA8YChX9Vse9ZJkcwmz",
+      "role": "local",
+      "ts": "2026-09-02T11:25:46.672+0800"
+    },
+    {
+      "event_type": "api_call",
+      "path": "/clinical/vars_standalone/5Cg15RA8YChX9Vse9ZJkcwmz",
+      "method": "GET",
+      "total_ms": 10,
+      "backend_ms": 1.1,
+      "case_id": null,
+      "experiment": null,
+      "user_id": "5Cg15RA8YChX9Vse9ZJkcwmz",
+      "role": "local",
+      "ts": "2026-09-02T11:25:46.769+0800"
+    },
+    {
+      "event_type": "api_call",
+      "path": "/llm/openrouter_verified",
+      "method": "GET",
+      "total_ms": 25,
+      "backend_ms": 8.9,
+      "case_id": null,
+      "experiment": null,
+      "user_id": "5Cg15RA8YChX9Vse9ZJkcwmz",
+      "role": "local",
+      "ts": "2026-09-06T12:51:54.999+0800"
+    },
+    {
+      "event_type": "api_call",
+      "path": "/clinical/vars_standalone/5Cg15RA8YChX9Vse9ZJkcwmz",
+      "method": "GET",
+      "total_ms": 81,
+      "backend_ms": 46.9,
+      "case_id": null,
+      "experiment": null,
+      "user_id": "5Cg15RA8YChX9Vse9ZJkcwmz",
+      "role": "local",
+      "ts": "2026-09-06T12:51:55.957+0800"
+    }
+  ]
+}
