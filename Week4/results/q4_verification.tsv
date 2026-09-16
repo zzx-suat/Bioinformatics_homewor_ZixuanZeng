@@ -1,0 +1,5 @@
+gene	variant	claimed_consequence	grch38_genes	grch38_ref	grch37_genes	grch37_ref	resolves_to	clinvar_acc	clinvar_actual_gene	clinvar_gene_matches	clinvar_review_status	clinvar_title
+TP53	chr17:7673803 G>A	splice_acceptor_variant	TP53	G	DNAH2	G	GRCh38	VCV000012345	TNFRSF1A	NO	no assertion criteria provided	NM_001065.4(TNFRSF1A):c.295T>A (p.Cys99Ser)
+KRAS	chr12:25398284 C>A	missense_variant	(none)	G	KRAS	C	GRCh37	VCV000000888	ARSB	NO	criteria provided, multiple submitters, no conflicts	NM_000046.5(ARSB):c.1143-8T>G
+BRCA2	chr13:32316461 C>T	missense_variant	BRCA2	A	RXFP2	G	NEITHER	VCV000067890	SCN5A	NO	no classification provided	NM_000335.5(SCN5A):c.4412A>G (p.Asn1471Ser)
+LDLR	chr19:11200200 C>T	missense_variant	DOCK6|DOCK6-AS1	G	LDLR	A	NEITHER	VCV000000666	PROC	NO	criteria provided, conflicting classifications	NM_000312.4(PROC):c.1000G>A (p.Gly334Ser)

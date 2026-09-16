@@ -1,0 +1,9 @@
+variant_id	GENE	CONSEQUENCE	CLINVAR_SIG	FILTER	DP	GQ	AF	drop_reason	trap
+chr2:47641560 A>G	MSH2	stop_gained	Pathogenic	LowQual	8	12	2e-5	FILTER=LowQual; DP=8 < 20; GQ=12 < 30	TRUE
+chrX:153870000 G>A	MECP2	frameshift_variant	Pathogenic	PASS	5	20	1e-5	DP=5 < 20; GQ=20 < 30	TRUE
+chr1:169519049 G>A	F5	missense_variant	Benign	PASS	55	95	0.42	AF=0.42 > 0.001	FALSE
+chr11:108323000 G>C	ATM	missense_variant	Benign	PASS	65	92	0.18	AF=0.18 > 0.001	FALSE
+chr4:88000000 G>T	NA	intron_variant	NA	PASS	75	98	0.35	AF=0.35 > 0.001; consequence=intron_variant	FALSE
+chr6:29942857 T>C	HLA-A	missense_variant	Uncertain_significance	FAIL	45	40	3e-5	FILTER=FAIL	FALSE
+chr7:117199644 C>T	CFTR	synonymous_variant	Benign	PASS	70	99	5e-5	consequence=synonymous_variant	FALSE
+chr8:128750000 A>G	NA	intergenic_variant	NA	PASS	50	85	8e-5	consequence=intergenic_variant	FALSE

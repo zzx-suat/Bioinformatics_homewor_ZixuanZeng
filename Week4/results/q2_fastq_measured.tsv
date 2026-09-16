@@ -1,0 +1,9 @@
+module	measured_by_us	claimed_in_snapshot	verdict
+Read pairs	120	-	R1 and R2 record counts match
+Sequence length distribution	all reads 80 bp	PASS / all 80 bp	confirmed
+Per base sequence quality (aggregate)	median Q cycles 1-50 = 34; cycles 51+ = 31	WARN / 3' median ~12 after cycle 50	DISCREPANT as stated - the aggregate median stays high
+Per base sequence quality (subpopulation)	18/120 reads (15.0%) have 3'-half median Q < 20; their median Q = 12	WARN / affects ~15% of R1	CONFIRMED once measured per-read - aggregate hid it
+Adapter content	18/120 R1 reads contain AGATCGGAAGAGC (15.0%)	FAIL / ~15% of pairs	confirmed
+Per sequence GC content	mean 42.8% GC; 12/120 reads >65% GC (10.0%)	WARN / main mode ~41% + shoulder ~78%	confirmed - bimodal, high-GC subpopulation present
+Sequence duplication levels	36/120 reads belong to a duplicated sequence (30.0%); the single most common template accounts for 18/120 (15.0%)	WARN / one template repeated in ~15%	REFINED - snapshot counts the repeated template (15%); total non-unique reads are twice that
+Per base N content	0 N bases total	PASS / ~0%	confirmed

@@ -1,0 +1,7 @@
+stage	rule	n_remaining	n_removed
+0. All records	—	12	NA
+1a. FILTER	FILTER == ""PASS""	10	2
+1b. Depth	DP >= 20	9	1
+1c. Genotype quality	GQ >= 30	9	0
+2. Population AF	AF <= 0.001	6	3
+3. Consequence	protein/splice-impacting classes	4	2
