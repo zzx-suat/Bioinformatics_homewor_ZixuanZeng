@@ -1,0 +1,24 @@
+item	value
+RNA class / assay	bulk gene-level RNA-seq (teaching synthetic data)
+value type entering DESeq2	raw integer counts (no TPM/CPM/z-score)
+biological unit	one library per sample; 2 replicates per batch x condition
+n samples	12
+conditions	control, treated
+batches	A, B, C
+design formula	~ batch + condition
+reference level	control
+contrast extracted	condition_treated_vs_control
+shrinkage	apeglm
+filter rule	>=10 counts in >=3 samples
+genes before filter	1000
+genes after filter	989
+colnames == rownames(metadata)	TRUE
+duplicated sample IDs	FALSE
+all counts non-negative integers	TRUE
+model matrix full rank	TRUE
+library size min/max	112619 / 151748
+padj cutoff	0.05
+abs(log2FC) cutoff	1
+significant up	36
+significant down	24
+padj = NA	0

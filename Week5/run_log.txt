@@ -1,0 +1,94 @@
+
+========== Week 5 作业自动运行 ==========
+R 版本 : R version 4.6.1 (2026-06-24 ucrt) 
+工作目录: D:/BioLession in total/Bioinformatics/week5/submission 
+时间   : 2026-09-23 12:36:35 
+
+CRAN 镜像: https://mirrors.tuna.tsinghua.edu.cn/CRAN 
+安装 Bioconductor 包: apeglm （首次可能要几分钟）
+'getOption("repos")' replaces Bioconductor standard repositories, see
+'help("repositories", package = "BiocManager")' for details.
+Replacement repositories:
+    CRAN: https://mirrors.tuna.tsinghua.edu.cn/CRAN
+Bioconductor version 3.23 (BiocManager 1.30.27), R 4.6.1 (2026-06-24 ucrt)
+Installing package(s) 'apeglm'
+also installing the dependencies 'coda', 'bbmle', 'emdbook', 'RcppNumerical'
+
+trying URL 'https://mirrors.tuna.tsinghua.edu.cn/CRAN/bin/windows/contrib/4.6/coda_0.19-4.1.zip'
+trying URL 'https://mirrors.tuna.tsinghua.edu.cn/CRAN/bin/windows/contrib/4.6/bbmle_1.0.26.zip'
+trying URL 'https://mirrors.tuna.tsinghua.edu.cn/CRAN/bin/windows/contrib/4.6/emdbook_1.3.14.zip'
+trying URL 'https://mirrors.tuna.tsinghua.edu.cn/CRAN/bin/windows/contrib/4.6/RcppNumerical_0.7-0.zip'
+trying URL 'https://mirrors.tuna.tsinghua.edu.cn/bioconductor/packages/3.23/bioc/bin/windows/contrib/4.6/apeglm_1.34.0.zip'
+package 'coda' successfully unpacked and MD5 sums checked
+package 'bbmle' successfully unpacked and MD5 sums checked
+package 'emdbook' successfully unpacked and MD5 sums checked
+package 'RcppNumerical' successfully unpacked and MD5 sums checked
+package 'apeglm' successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+	C:\Users\19572\AppData\Local\Temp\RtmpkPz7A8\downloaded_packages
+
+---------- 开始分析 ----------
+输入目录: D:\BioLession in total\Bioinformatics\week5\Homework\for_student
+
+== 设计表 ==
+   
+    control treated
+  A       2       2
+  B       2       2
+  C       2       2
+
+== 文库大小 ==
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+ 112619  121524  129657  130940  139731  151748 
+
+== 因子水平 ==
+condition: control | treated 
+batch    : A | B | C 
+
+== 过滤 ==
+规则: >=10 counts 于 >=3 个样本
+保留 989 / 1000 个基因（滤除 11）
+estimating size factors
+estimating dispersions
+gene-wise dispersion estimates
+mean-dispersion relationship
+final dispersion estimates
+fitting model and testing
+
+== resultsNames(dds) ==
+[1] "Intercept"                    "batch_B_vs_A"                
+[3] "batch_C_vs_A"                 "condition_treated_vs_control"
+using 'apeglm' for LFC shrinkage. If used in published research, please cite:
+    Zhu, A., Ibrahim, J.G., Love, M.I. (2018) Heavy-tailed prior distributions for
+    sequence count data: removing the noise and preserving large differences.
+    Bioinformatics. https://doi.org/10.1093/bioinformatics/bty895
+
+== results() 元信息 ==
+[1] "mean of normalized counts for all samples"           
+[2] "log2 fold change (MLE): condition treated vs control"
+[3] "standard error: condition treated vs control"        
+[4] "Wald statistic: condition treated vs control"        
+[5] "Wald test p-value: condition treated vs control"     
+[6] "BH adjusted p-values"                                
+
+== 显著性（padj < 0.05 且 |log2FC| >= 1）==
+上调 36 ｜ 下调 24 ｜ 合计 60
+padj 为 NA 的基因: 0
+using ntop=500 top features by variance
+
+== 方向一致性（收缩 LFC 符号 vs 原始 counts 组均值）==
+top20 中一致: 20 / 20
+
+== 完成 ==
+ - week5_pca.png
+ - week5_de_plot.png
+ - week5_deseq2_results.csv
+ - week5_top20_features.csv
+ - week5_direction_check.csv
+ - design_and_checks.tsv
+ - week5_deseq2_object.rds
+ - session_info.txt 
+
+---------- 分析结束 ----------
+完成时间: 2026-09-23 12:37:04 
