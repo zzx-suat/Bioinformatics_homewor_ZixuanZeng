@@ -12,7 +12,7 @@
 #   与版本不同，数值不保证完全一致。报告中引用时必须标明来源为本次 R 重建。
 #
 # 输入（均为原始文件，未改动）：
-#   EasyMultiProfiler-Web/tests/RNAseq_output.csv    原始整数 counts, 24393 x 24
+#   EasyMultiProfiler-Web/tests/RNAseq_output.csv    原始整数 counts, 24394 x 24
 #   EasyMultiProfiler-Web/tests/RNAseq_mapping.csv   样本分组
 #   week5/RNAseq_output_assay.csv                    仅用于取 EMP 保留的基因名
 #

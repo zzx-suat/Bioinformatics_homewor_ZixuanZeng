@@ -293,7 +293,7 @@ IBS 中配对检验明显更灵敏，UC 中两者相当。这与 ICC 的大小�
 
 ```bash
 cd week6_project
-"D:\R-4.6.1\bin\Rscript.exe" R/run_all.R      # 依次跑 01-05，约 10 秒；05 需要 results/EMPresult/
+"D:\R-4.6.1\bin\Rscript.exe" R/run_all.R      # 依次跑 01-05，约 5 秒；05 需要 results/EMPresult/
 ```
 
 运行环境 R 4.6.1 (2026-06-24 ucrt)，Windows 11 x64。完整日志见附录 B，`sessionInfo()` 见附录 C。

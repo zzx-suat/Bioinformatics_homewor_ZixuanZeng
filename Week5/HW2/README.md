@@ -3,7 +3,7 @@
 **Zixuan Zeng (曾梓轩) · SUAT24000114**
 
 数据：`EasyMultiProfiler-Web/tests/RNAseq_output.csv` + `RNAseq_mapping.csv`
-24,393 基因 × 24 样本，6 组 × 4 重复：
+24,394 基因 × 24 样本，6 组 × 4 重复：
 
 ```
 DMSO · DMSO+LIPUS · T4400 · T4400+LIPUS · T3976 · T3976+LIPUS
