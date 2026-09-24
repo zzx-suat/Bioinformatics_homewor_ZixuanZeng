@@ -1,0 +1,90 @@
+{
+  "success": true,
+  "user_id": "flhosvH7ov1iwkdpGiCwutVx",
+  "events": [
+    {
+      "event_type": "api_call",
+      "path": "/import",
+      "method": "POST",
+      "total_ms": 1401,
+      "backend_ms": 499.8,
+      "case_id": "course_transcriptomics",
+      "experiment": null,
+      "user_id": "flhosvH7ov1iwkdpGiCwutVx",
+      "role": "local",
+      "ts": "2026-09-25T00:46:00.317+0800"
+    },
+    {
+      "event_type": "api_call",
+      "path": "/clinical/vars_standalone/flhosvH7ov1iwkdpGiCwutVx",
+      "method": "GET",
+      "total_ms": 20,
+      "backend_ms": 2.1,
+      "case_id": "course_transcriptomics",
+      "experiment": null,
+      "user_id": "flhosvH7ov1iwkdpGiCwutVx",
+      "role": "local",
+      "ts": "2026-09-25T00:46:00.366+0800"
+    },
+    {
+      "event_type": "api_call",
+      "path": "/prepare/snapshots/flhosvH7ov1iwkdpGiCwutVx/16S_level_7",
+      "method": "GET",
+      "total_ms": 18,
+      "backend_ms": 0.8,
+      "case_id": "course_transcriptomics",
+      "experiment": "16S_level_7",
+      "user_id": "flhosvH7ov1iwkdpGiCwutVx",
+      "role": "local",
+      "ts": "2026-09-25T00:46:00.498+0800"
+    },
+    {
+      "event_type": "api_call",
+      "path": "/prepare/snapshots/flhosvH7ov1iwkdpGiCwutVx/16S_level_7",
+      "method": "GET",
+      "total_ms": 31,
+      "backend_ms": 0.6,
+      "case_id": "course_transcriptomics",
+      "experiment": "16S_level_7",
+      "user_id": "flhosvH7ov1iwkdpGiCwutVx",
+      "role": "local",
+      "ts": "2026-09-25T00:46:04.143+0800"
+    },
+    {
+      "event_type": "api_call",
+      "path": "/prepare/filter",
+      "method": "POST",
+      "total_ms": 309,
+      "backend_ms": 101.6,
+      "case_id": "course_transcriptomics",
+      "experiment": "16S_level_7",
+      "user_id": "flhosvH7ov1iwkdpGiCwutVx",
+      "role": "local",
+      "ts": "2026-09-25T00:46:29.286+0800"
+    },
+    {
+      "event_type": "api_call",
+      "path": "/prepare/snapshots/flhosvH7ov1iwkdpGiCwutVx/16S_level_7",
+      "method": "GET",
+      "total_ms": 16,
+      "backend_ms": 1.9,
+      "case_id": "course_transcriptomics",
+      "experiment": "16S_level_7",
+      "user_id": "flhosvH7ov1iwkdpGiCwutVx",
+      "role": "local",
+      "ts": "2026-09-25T00:46:29.344+0800"
+    },
+    {
+      "event_type": "api_call",
+      "path": "/analyze/differential/async",
+      "method": "POST",
+      "total_ms": 72,
+      "backend_ms": 39.2,
+      "case_id": "course_transcriptomics",
+      "experiment": "16S_level_7",
+      "user_id": "flhosvH7ov1iwkdpGiCwutVx",
+      "role": "local",
+      "ts": "2026-09-25T00:47:12.744+0800"
+    }
+  ]
+}
