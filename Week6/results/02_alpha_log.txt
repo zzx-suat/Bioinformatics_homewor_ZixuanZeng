@@ -1,0 +1,45 @@
+=========== Week 6 Alpha 多样性 ===========
+时间: 2026-09-24 15:21:55
+
+抽平设置
+  最小深度 = 1624，全部样本抽平至该深度（无样本被丢弃）
+  抽平后每样本深度是否一致: TRUE
+
+深度与 alpha 的相关（说明为何要抽平）
+  Observed（原始） 对 depth 的 Spearman rho = 0.479
+  Observed（抽平） 对 depth 的 Spearman rho = 0.409
+  Shannon （原始） 对 depth 的 Spearman rho = -0.169
+  Shannon （抽平） 对 depth 的 Spearman rho = -0.173
+  => 抽平后若相关大幅下降，说明原始丰富度差异有相当部分只是深度差异。
+
+检验 1 — 受试者内 before vs after（配对 Wilcoxon signed-rank）
+  纳入受试者: 64 对（仅单次采样者已排除）
+  Shannon_r   ALL  n=64  中位  3.042 ->  2.625  变化 -0.123  p=0.0310  p.adj=0.0698
+  Shannon_r   IBS  n=35  中位  3.156 ->  3.056  变化 -0.053  p=0.5499  p.adj=0.7071
+  Shannon_r   UC   n=29  中位  2.922 ->  2.415  变化 -0.321  p=0.0129  p.adj=0.0698
+  Observed_r  ALL  n=64  中位 51.000 -> 52.500  变化 +1.000  p=0.7532  p.adj=0.8313
+  Observed_r  IBS  n=35  中位 53.000 -> 55.000  变化 +3.000  p=0.8313  p.adj=0.8313
+  Observed_r  UC   n=29  中位 50.000 -> 47.000  变化 -3.000  p=0.4621  p.adj=0.6932
+  Simpson_r   ALL  n=64  中位  0.899 ->  0.850  变化 -0.017  p=0.0209  p.adj=0.0698
+  Simpson_r   IBS  n=35  中位  0.912 ->  0.908  变化 -0.006  p=0.3547  p.adj=0.6385
+  Simpson_r   UC   n=29  中位  0.879 ->  0.791  变化 -0.049  p=0.0274  p.adj=0.0698
+
+检验 2 — 受试者内变化量在应答组间的差异（Mann-Whitney）
+  每个受试者贡献一个 delta = after - before，故组间观测互相独立。
+  Shannon_r   ALL  poor n=31 delta中位 -0.053 | great n=33 delta中位 -0.259 | p=0.1584 p.adj=0.4110
+  Shannon_r   IBS  poor n=18 delta中位 +0.051 | great n=17 delta中位 -0.140 | p=0.2283 p.adj=0.4110
+  Shannon_r   UC   poor n=13 delta中位 -0.106 | great n=16 delta中位 -0.366 | p=0.4428 p.adj=0.5635
+  Observed_r  ALL  poor n=31 delta中位 +4.000 | great n=33 delta中位 -6.000 | p=0.2213 p.adj=0.4110
+  Observed_r  IBS  poor n=18 delta中位 +10.000 | great n=17 delta中位 -9.000 | p=0.0458 p.adj=0.4110
+  Observed_r  UC   poor n=13 delta中位 -3.000 | great n=16 delta中位 -2.500 | p=0.5535 p.adj=0.5635
+  Simpson_r   ALL  poor n=31 delta中位 -0.005 | great n=33 delta中位 -0.042 | p=0.2215 p.adj=0.4110
+  Simpson_r   IBS  poor n=18 delta中位 +0.008 | great n=17 delta中位 -0.016 | p=0.5635 p.adj=0.5635
+  Simpson_r   UC   poor n=13 delta中位 -0.008 | great n=16 delta中位 -0.102 | p=0.3458 p.adj=0.5186
+
+检验 3 — 线性混合模型对照（Subject 随机截距，似然比检验）
+  模型: Shannon_r ~ Timepoint * Response + (1 | Subject)
+  IBS: 交互项 LRT p=0.2112 | Timepoint 主效应 LRT p=0.3472 | 受试者 ICC=0.523
+  UC: 交互项 LRT p=0.6129 | Timepoint 主效应 LRT p=0.0166 | 受试者 ICC=0.340
+  ICC 越高，说明受试者身份解释的方差越大，把样本当独立处理的偏差就越严重。
+
+已写出 results/02_*.csv, figures/02_alpha.png

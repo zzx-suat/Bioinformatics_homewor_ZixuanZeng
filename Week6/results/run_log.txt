@@ -1,0 +1,230 @@
+﻿========== Week 6 微生物组分析 · 完整运行日志 ==========
+运行时间 : 2026-09-24 15:21:58
+R 版本   : R version 4.6.1 (2026-06-24 ucrt)
+平台     : Windows 11 x64
+工作目录 : D:/BioLession in total/Bioinformatics/week6/week6_project
+调用     : Rscript R/run_all.R
+
+---------- 控制台输出（原样，未编辑） ----------
+=========== Week 6 全流程 ===========
+开始时间 : 2026-09-24 15:21:53 
+R 版本   : R version 4.6.1 (2026-06-24 ucrt) 
+工作目录 : D:/BioLession in total/Bioinformatics/week6/week6_project 
+
+
+======================================================================
+>>> R/01_load_clean.R
+======================================================================
+=========== Week 6 数据清洗日志 =========== 
+时间: 2026-09-24 15:21:53 
+ 
+原始输入 
+  丰度表 : 470 taxa x 132 样本 
+  元数据 : 130 行, 字段 = SampleID, Group, Group_sub 
+ 
+问题 1 — 样本集合 
+  两边都有        : 130 
+  仅在丰度表 (孤儿): 2  -> K_XYL_F_0009_03, K_XYL_F_0035_03 
+  仅在元数据      : 0 
+  顺序是否一致    : FALSE 
+  处置：丢弃无元数据的孤儿样本（无分组信息则无法进入任何比较）， 
+        并把丰度表按元数据顺序重排。两项均记录于此，不静默进行。 
+ 
+问题 2 — 样本编号后缀不统一 
+  后缀分布: _01=64, _02=63, _03=1, _2=2 
+  '_2' 与 '_02' 指同一时间点，但字符串不同；解析受试者/时间点时按数值处理。 
+ 
+对齐后: 470 taxa x 130 样本；列名与元数据行名严格一致 
+ 
+解析出的设计变量 
+  Disease   : IBS=72, UC=58 
+  Timepoint : before=65, after=65 
+  Response  : poor=62, great=68 
+  受试者数  : 66 
+ 
+问题 3 — 配对结构（决定统计方法） 
+  有 before+after 两次采样的受试者: 64 
+  只有单次采样的受试者            : 2  -> J_XYL_F_0048, J_XYL_F_0049 
+  配对内 timepoint 组合: after+before=64 
+  配对内 Response 前后不一致的受试者数: 0 
+  配对内 Disease  前后不一致的受试者数: 0 
+ 
+  => 同一受试者的两个样本不是独立观测。 
+     任何把 before/after 当作两个独立组的检验都是伪重复。 
+     后续采用：受试者内对比 + 以 Subject 为 strata 的受限置换。 
+ 
+测序深度（每样本总计数） 
+  min 1624 | Q1 8167 | 中位 10197 | Q3 12091 | max 20283 
+  最深/最浅 = 12.5 倍 
+  深度 < 1000 的样本: 0 
+ 
+稀疏度 
+  零值占比 88.1% 
+  仅出现在 1 个样本中的 taxa: 153 / 470 
+  出现在 >= 10% 样本中的 taxa: 136 
+ 
+已写出: 
+  results/01_clean_data.rds 
+  results/01_read_depth.csv 
+  results/01_sample_metadata_parsed.csv 
+  results/01_cleaning_log.txt  (本文件) 
+
+01 完成
+[01_load_clean.R 用时 0.3 秒]
+
+======================================================================
+>>> R/02_alpha_diversity.R
+======================================================================
+=========== Week 6 Alpha 多样性 =========== 
+时间: 2026-09-24 15:21:55 
+ 
+抽平设置 
+  最小深度 = 1624，全部样本抽平至该深度（无样本被丢弃） 
+  抽平后每样本深度是否一致: TRUE 
+ 
+深度与 alpha 的相关（说明为何要抽平） 
+  Observed（原始） 对 depth 的 Spearman rho = 0.479 
+  Observed（抽平） 对 depth 的 Spearman rho = 0.409 
+  Shannon （原始） 对 depth 的 Spearman rho = -0.169 
+  Shannon （抽平） 对 depth 的 Spearman rho = -0.173 
+  => 抽平后若相关大幅下降，说明原始丰富度差异有相当部分只是深度差异。 
+ 
+检验 1 — 受试者内 before vs after（配对 Wilcoxon signed-rank） 
+  纳入受试者: 64 对（仅单次采样者已排除） 
+  Shannon_r   ALL  n=64  中位  3.042 ->  2.625  变化 -0.123  p=0.0310  p.adj=0.0698 
+  Shannon_r   IBS  n=35  中位  3.156 ->  3.056  变化 -0.053  p=0.5499  p.adj=0.7071 
+  Shannon_r   UC   n=29  中位  2.922 ->  2.415  变化 -0.321  p=0.0129  p.adj=0.0698 
+  Observed_r  ALL  n=64  中位 51.000 -> 52.500  变化 +1.000  p=0.7532  p.adj=0.8313 
+  Observed_r  IBS  n=35  中位 53.000 -> 55.000  变化 +3.000  p=0.8313  p.adj=0.8313 
+  Observed_r  UC   n=29  中位 50.000 -> 47.000  变化 -3.000  p=0.4621  p.adj=0.6932 
+  Simpson_r   ALL  n=64  中位  0.899 ->  0.850  变化 -0.017  p=0.0209  p.adj=0.0698 
+  Simpson_r   IBS  n=35  中位  0.912 ->  0.908  变化 -0.006  p=0.3547  p.adj=0.6385 
+  Simpson_r   UC   n=29  中位  0.879 ->  0.791  变化 -0.049  p=0.0274  p.adj=0.0698 
+ 
+检验 2 — 受试者内变化量在应答组间的差异（Mann-Whitney） 
+  每个受试者贡献一个 delta = after - before，故组间观测互相独立。 
+  Shannon_r   ALL  poor n=31 delta中位 -0.053 | great n=33 delta中位 -0.259 | p=0.1584 p.adj=0.4110 
+  Shannon_r   IBS  poor n=18 delta中位 +0.051 | great n=17 delta中位 -0.140 | p=0.2283 p.adj=0.4110 
+  Shannon_r   UC   poor n=13 delta中位 -0.106 | great n=16 delta中位 -0.366 | p=0.4428 p.adj=0.5635 
+  Observed_r  ALL  poor n=31 delta中位 +4.000 | great n=33 delta中位 -6.000 | p=0.2213 p.adj=0.4110 
+  Observed_r  IBS  poor n=18 delta中位 +10.000 | great n=17 delta中位 -9.000 | p=0.0458 p.adj=0.4110 
+  Observed_r  UC   poor n=13 delta中位 -3.000 | great n=16 delta中位 -2.500 | p=0.5535 p.adj=0.5635 
+  Simpson_r   ALL  poor n=31 delta中位 -0.005 | great n=33 delta中位 -0.042 | p=0.2215 p.adj=0.4110 
+  Simpson_r   IBS  poor n=18 delta中位 +0.008 | great n=17 delta中位 -0.016 | p=0.5635 p.adj=0.5635 
+  Simpson_r   UC   poor n=13 delta中位 -0.008 | great n=16 delta中位 -0.102 | p=0.3458 p.adj=0.5186 
+ 
+检验 3 — 线性混合模型对照（Subject 随机截距，似然比检验） 
+  模型: Shannon_r ~ Timepoint * Response + (1 | Subject) 
+  IBS: 交互项 LRT p=0.2112 | Timepoint 主效应 LRT p=0.3472 | 受试者 ICC=0.523 
+  UC: 交互项 LRT p=0.6129 | Timepoint 主效应 LRT p=0.0166 | 受试者 ICC=0.340 
+  ICC 越高，说明受试者身份解释的方差越大，把样本当独立处理的偏差就越严重。 
+ 
+已写出 results/02_*.csv, figures/02_alpha.png 
+
+02 完成
+[02_alpha_diversity.R 用时 2.6 秒]
+
+======================================================================
+>>> R/03_beta_diversity.R
+======================================================================
+=========== Week 6 Beta 多样性 =========== 
+时间: 2026-09-24 15:21:56 
+ 
+特征过滤 
+  规则: 至少在 10% 的样本中出现（13 个样本） 
+  保留 136 / 470 个 taxa 
+  说明: 只出现在极少数样本的 taxa 主要贡献噪声与零；该规则在看结果之前设定。 
+ 
+CLR 变换 
+  伪计数 = 0.5（零值占比 64.7%） 
+  每行 CLR 之和应为 0: 最大偏差 3.99e-14 
+ 
+=========== PERMANOVA =========== 
+问题: 时间点（before/after）是否解释群落结构？ 
+同一受试者贡献两个样本，两者高度相关，故置换必须在受试者内进行。 
+ 
+---- IBS （70 样本 / 35 受试者）---- 
+  Aitchison 距离  R2 = 0.0159 
+    无限制置换（错误做法）      p = 0.2770 
+    受试者内受限置换（正确做法）p = 0.0180 
+    离散度齐性检验 p = 0.2270   （离散度齐，位置差异的解读较安全） 
+ 
+---- UC （58 样本 / 29 受试者）---- 
+  Aitchison 距离  R2 = 0.0194 
+    无限制置换（错误做法）      p = 0.2760 
+    受试者内受限置换（正确做法）p = 0.0220 
+    离散度齐性检验 p = 0.3030   （离散度齐，位置差异的解读较安全） 
+ 
+---- 受试者身份的解释力（说明为何必须受限置换）---- 
+  Aitchison ~ Subject: R2 = 0.6133, p = 0.0050 
+  受试者身份解释了群落方差的很大一部分。这正是把两个时间点当独立样本会失真的原因。 
+ 
+---- 应答组差异：受试者内变化向量 ---- 
+  对每个受试者计算 delta = CLR(after) - CLR(before)， 
+  再以 delta 向量做 PERMANOVA。每受试者一行，组间观测独立，无需受限置换。 
+  ALL  n=64  delta ~ Response: R2 = 0.0160, p = 0.4300 
+  IBS  n=35  delta ~ Response: R2 = 0.0382, p = 0.0540 
+  UC   n=29  delta ~ Response: R2 = 0.0292, p = 0.8760 
+ 
+已写出 results/03_*, figures/03_beta.png 
+
+03 完成
+[03_beta_diversity.R 用时 1.4 秒]
+
+======================================================================
+>>> R/04_differential.R
+======================================================================
+=========== Week 6 差异丰度 =========== 
+时间: 2026-09-24 15:21:57 
+尺度: CLR；检验: 受试者内配对 Wilcoxon signed-rank；多重校正: BH 
+特征数: 136 
+ 
+---- IBS：before vs after（35 对）---- 
+  BH 校正后 p.adj < 0.05 的 taxa: 0 / 136 
+  未校正 p < 0.05 的 taxa      : 12（按随机预期约 7 个） 
+   f__Bacteroidaceae;g__Bacteroides                     delta=-1.452  p=0.0006  p.adj=0.087 
+   g__Akkermansia;s__muciniphila                        delta=+1.271  p=0.0038  p.adj=0.214 
+   g__;s__                                              delta=-0.671  p=0.0047  p.adj=0.214 
+   g__Lactobacillus;s__                                 delta=+1.074  p=0.0082  p.adj=0.269 
+   g__Fusobacterium;s__                                 delta=-0.464  p=0.0099  p.adj=0.269 
+   g__Coprococcus;s__catus                              delta=+0.554  p=0.0150  p.adj=0.340 
+   g__Bifidobacterium;s__animalis                       delta=+0.401  p=0.0179  p.adj=0.349 
+   g__Ruminococcus;s__bromii                            delta=+0.672  p=0.0243  p.adj=0.391 
+ 
+---- UC：before vs after（29 对）---- 
+  BH 校正后 p.adj < 0.05 的 taxa: 0 / 136 
+  未校正 p < 0.05 的 taxa      : 11（按随机预期约 7 个） 
+   o__Bifidobacteriales;f__Bifidobacteriaceae           delta=+0.707  p=0.0129  p.adj=0.471 
+   g__Bacteroides;s__fragilis                           delta=-0.614  p=0.0207  p.adj=0.471 
+   g__Bacteroides;s__uniformis                          delta=-0.614  p=0.0219  p.adj=0.471 
+   g__Bacteroides;s__caccae                             delta=-0.392  p=0.0219  p.adj=0.471 
+   f__Bacteroidaceae;g__Bacteroides                     delta=-1.153  p=0.0232  p.adj=0.471 
+   g__Bifidobacterium;s__                               delta=+0.631  p=0.0259  p.adj=0.471 
+   g__Lactobacillus;s__mucosae                          delta=+0.262  p=0.0360  p.adj=0.471 
+   g__Catenibacterium;s__                               delta=+0.509  p=0.0379  p.adj=0.471 
+ 
+---- 受试者内变化量 delta 在 poor vs great 之间的差异 ---- 
+  每受试者一个 delta，组间独立，用 Mann-Whitney。 
+  IBS: BH 后显著 0 个；未校正 p<0.05 的 12 个（随机预期约 7） 
+   g__Prevotella;s__                                    great+0.554 poor-0.337  p=0.0059 p.adj=0.503 
+   g__Dorea;s__                                         great+0.843 poor-0.415  p=0.0105 p.adj=0.503 
+   g__Catenibacterium;s__                               great+0.401 poor-0.419  p=0.0200 p.adj=0.503 
+   g__Lactobacillus;s__zeae                             great+0.554 poor-0.337  p=0.0200 p.adj=0.503 
+   g__Blautia;s__                                       great-0.416 poor+2.916  p=0.0200 p.adj=0.503 
+  UC: BH 后显著 0 个；未校正 p<0.05 的 8 个（随机预期约 7） 
+   g__Parabacteroides;s__                               great-0.564 poor+0.262  p=0.0091 p.adj=0.607 
+   g__Desulfovibrio;s__                                 great-2.528 poor+0.968  p=0.0132 p.adj=0.607 
+   g__Holdemania;s__                                    great-0.251 poor+0.179  p=0.0149 p.adj=0.607 
+   g__Butyricimonas;s__                                 great-0.251 poor+0.179  p=0.0190 p.adj=0.607 
+   g__Faecalibacterium;s__prausnitzii                   great+0.688 poor-0.548  p=0.0268 p.adj=0.607 
+ 
+已写出 results/04_*.csv, figures/04_paired_diff.png 
+
+04 完成
+[04_differential.R 用时 0.5 秒]
+
+======================================================================
+全流程完成，总用时 4.9 秒
+sessionInfo 已写入 results/session_info.txt
+
+---------- 运行结束，退出码 0 ----------

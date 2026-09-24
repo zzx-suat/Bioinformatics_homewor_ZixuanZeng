@@ -1,0 +1,45 @@
+=========== Week 6 差异丰度 ===========
+时间: 2026-09-24 15:21:57
+尺度: CLR；检验: 受试者内配对 Wilcoxon signed-rank；多重校正: BH
+特征数: 136
+
+---- IBS：before vs after（35 对）----
+  BH 校正后 p.adj < 0.05 的 taxa: 0 / 136
+  未校正 p < 0.05 的 taxa      : 12（按随机预期约 7 个）
+   f__Bacteroidaceae;g__Bacteroides                     delta=-1.452  p=0.0006  p.adj=0.087
+   g__Akkermansia;s__muciniphila                        delta=+1.271  p=0.0038  p.adj=0.214
+   g__;s__                                              delta=-0.671  p=0.0047  p.adj=0.214
+   g__Lactobacillus;s__                                 delta=+1.074  p=0.0082  p.adj=0.269
+   g__Fusobacterium;s__                                 delta=-0.464  p=0.0099  p.adj=0.269
+   g__Coprococcus;s__catus                              delta=+0.554  p=0.0150  p.adj=0.340
+   g__Bifidobacterium;s__animalis                       delta=+0.401  p=0.0179  p.adj=0.349
+   g__Ruminococcus;s__bromii                            delta=+0.672  p=0.0243  p.adj=0.391
+
+---- UC：before vs after（29 对）----
+  BH 校正后 p.adj < 0.05 的 taxa: 0 / 136
+  未校正 p < 0.05 的 taxa      : 11（按随机预期约 7 个）
+   o__Bifidobacteriales;f__Bifidobacteriaceae           delta=+0.707  p=0.0129  p.adj=0.471
+   g__Bacteroides;s__fragilis                           delta=-0.614  p=0.0207  p.adj=0.471
+   g__Bacteroides;s__uniformis                          delta=-0.614  p=0.0219  p.adj=0.471
+   g__Bacteroides;s__caccae                             delta=-0.392  p=0.0219  p.adj=0.471
+   f__Bacteroidaceae;g__Bacteroides                     delta=-1.153  p=0.0232  p.adj=0.471
+   g__Bifidobacterium;s__                               delta=+0.631  p=0.0259  p.adj=0.471
+   g__Lactobacillus;s__mucosae                          delta=+0.262  p=0.0360  p.adj=0.471
+   g__Catenibacterium;s__                               delta=+0.509  p=0.0379  p.adj=0.471
+
+---- 受试者内变化量 delta 在 poor vs great 之间的差异 ----
+  每受试者一个 delta，组间独立，用 Mann-Whitney。
+  IBS: BH 后显著 0 个；未校正 p<0.05 的 12 个（随机预期约 7）
+   g__Prevotella;s__                                    great+0.554 poor-0.337  p=0.0059 p.adj=0.503
+   g__Dorea;s__                                         great+0.843 poor-0.415  p=0.0105 p.adj=0.503
+   g__Catenibacterium;s__                               great+0.401 poor-0.419  p=0.0200 p.adj=0.503
+   g__Lactobacillus;s__zeae                             great+0.554 poor-0.337  p=0.0200 p.adj=0.503
+   g__Blautia;s__                                       great-0.416 poor+2.916  p=0.0200 p.adj=0.503
+  UC: BH 后显著 0 个；未校正 p<0.05 的 8 个（随机预期约 7）
+   g__Parabacteroides;s__                               great-0.564 poor+0.262  p=0.0091 p.adj=0.607
+   g__Desulfovibrio;s__                                 great-2.528 poor+0.968  p=0.0132 p.adj=0.607
+   g__Holdemania;s__                                    great-0.251 poor+0.179  p=0.0149 p.adj=0.607
+   g__Butyricimonas;s__                                 great-0.251 poor+0.179  p=0.0190 p.adj=0.607
+   g__Faecalibacterium;s__prausnitzii                   great+0.688 poor-0.548  p=0.0268 p.adj=0.607
+
+已写出 results/04_*.csv, figures/04_paired_diff.png
