@@ -1,0 +1,38 @@
+﻿========== Week 5 Homework 2 · R 重建运行日志 ==========
+运行时间 : 2026-09-24 10:11:36
+R 版本   : R version 4.6.1 (2026-06-24 ucrt)
+平台     : Windows 11 x64
+工作目录 : D:/BioLession in total/Bioinformatics/week5/hw2_rebuild
+脚本     : hw2_rebuild_analysis.R
+调用     : Rscript hw2_rebuild_analysis.R
+
+---------- 控制台输出（原样） ----------
+输入: 24394 基因 x 24 样本, 全为非负整数, 样本顺序一致
+特征集: 采用 EMP 保留的 14245 个基因（从平台导出的 assay 读取，非本脚本重新过滤）
+
+分组结构:
+
+       DMSO  DMSO+LIPUS       T3976 T3976+LIPUS       T4400 T4400+LIPUS 
+          4           4           4           4           4           4 
+  Note: levels of factors in the design contain characters other than
+  letters, numbers, '_' and '.'. It is recommended (but not required) to use
+  only letters, numbers, and delimiters '_' or '.', as these are safe characters
+  for column names in R. [This is a message, not a warning or an error]
+
+PCA: PC1 56.4%, PC2 13.9%
+
+差异分析子集: 8 样本 (DMSO=4, T4400=4)
+模型矩阵满秩: 2/2
+resultsNames:  Intercept | Group_T4400_vs_DMSO 
+
+阈值 padj < 0.05 且 |log2FC| >= 1
+  上调 (T4400 更高): 116
+  下调 (T4400 更低): 12
+  合计显著          : 128
+  padj 为 NA        : 832
+  仅过 padj 未过效应量: 2068
+方向核验: top20 中 20 个与原始组均值一致
+
+完成。产物写入 D:/BioLession in total/Bioinformatics/week5/hw2_rebuild
+
+---------- 运行结束，退出码 0 ----------
