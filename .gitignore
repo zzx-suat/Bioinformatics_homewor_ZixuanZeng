@@ -1,0 +1,41 @@
+# --- Secrets / credentials: NEVER commit -------------------------------------
+# GitHub secret scanning auto-revokes any ghp_* token pushed to a public repo.
+*Handoff*
+*handoff*
+交接文档*
+*作业交接文档*
+作业指南_*
+完成状态与操作指南.md
+generate_final_doc.py
+*_token*
+*.pem
+*.key
+.env
+.env.*
+
+# EMP local runtime: contains password_hash, password_salt and the encrypted
+# GitHub token under .local_run/data/students/X*/profile.json
+EasyMultiProfiler-Web/
+.local_run/
+
+# --- Local working noise -----------------------------------------------------
+screenshots/
+api_test_results/
+R_Practice_Files/
+*.lnk
+image.png
+Start-Harness.ps1
+Fix-DSH-Permission.bat
+install_emp_web.ps1
+
+# --- R / Python scratch ------------------------------------------------------
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+renv/library/
+__pycache__/
+*.pyc
+
+# NOTE: Week1/ Week2/ Week3/ Week4/ and EMP2026/ are submission content and are
+# deliberately NOT ignored. `.gitignore` never affects files already tracked.
