@@ -30,7 +30,8 @@ INLINE = re.compile(r"(\*\*.+?\*\*|`[^`]+`|\*[^*]+\*)")
 CJK = re.compile(r"[　-〿一-鿿＀-￯]")
 
 APPENDIX_CODE = ["R/01_load_clean.R", "R/02_alpha_diversity.R",
-                 "R/03_beta_diversity.R", "R/04_differential.R", "R/run_all.R"]
+                 "R/03_beta_diversity.R", "R/04_differential.R",
+                 "R/05_platform_vs_R.R", "R/run_all.R"]
 
 
 def set_font(run, latin=None, east=CN):

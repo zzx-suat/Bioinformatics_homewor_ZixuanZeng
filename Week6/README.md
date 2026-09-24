@@ -15,7 +15,7 @@ Bioinformatics: From Multi-Omics Data to Discovery · Dr. Liwei Xie · SUAT · F
 |---|---|
 | 一 | 数据与设计：三处数据不一致的处置、配对结构的识别 |
 | 二 | 方法与选择理由 |
-| 三 | 结果：alpha 多样性、beta 多样性与 PERMANOVA、差异丰度 |
+| 三 | 结果：alpha 多样性、beta 多样性与 PERMANOVA、差异丰度；**3.4 EMP-Web 平台结果与 R 对照** |
 | **四** | **科学假设（本人撰写）** |
 | 五 | 局限 |
 | 六 | AI 使用声明与审计表 |
@@ -49,16 +49,17 @@ Bioinformatics: From Multi-Omics Data to Discovery · Dr. Liwei Xie · SUAT · F
 Week6/
 ├── Week6_分析报告_曾梓轩.docx
 ├── docs/     报告 md 源文件、EMP 操作单
-├── R/        00 环境检查 · 01 清洗 · 02 alpha · 03 beta · 04 差异丰度 · run_all · build_docx
-├── figures/  02_alpha.png · 03_beta.png · 04_paired_diff.png
+├── R/        00 环境检查 · 01 清洗 · 02 alpha · 03 beta · 04 差异丰度 · 05 平台对照 · run_all · build_docx
+├── figures/  02_alpha.png · 03_beta.png · 04_paired_diff.png · 05_platform_vs_R.png
 └── results/  清洗日志、各步日志与结果表、完整运行日志、sessionInfo
+    └── EMPresult/  EMP-Web 平台的原始产出（文件说明见其中 README.md）
 ```
 
 ## 复现
 
 ```bash
 cd Week6
-"D:\R-4.6.1\bin\Rscript.exe" R/run_all.R    # 约 5 秒
+"D:\R-4.6.1\bin\Rscript.exe" R/run_all.R    # 01-05，约 5 秒；05 需要 results/EMPresult/
 py R/build_docx.py                           # 重新生成 docx
 ```
 
@@ -68,5 +69,16 @@ py R/build_docx.py                           # 重新生成 docx
 
 ## EMP-Web 平台提交
 
-作业要求经 EMP-web 提交最终结果。平台操作步骤、分组与方向设置、
-以及 Week 5 同步导出空文件的应对，见 `docs/EMP操作单.md`。
+作业要求经 EMP-web 提交最终结果。平台操作由本人完成，两次有效同步：
+
+| 同步运行 | 内容 |
+|---|---|
+| `EMP2026/Week_06/microbiome_16s/weekly/runs/2026-09-24T16-35-32-319Z-res6qh` | IBS before vs after，72 样本 |
+| `EMP2026/Week_06/microbiome_16s/weekly/runs/2026-09-24T16-48-50-412Z-oqnxna` | UC before vs after，58 样本（LATEST） |
+
+同步文件中 alpha、降维、富集为空（平台只导出实验对象里的结果，分析页结果另存），
+因此平台的全部实际产出另存于 `results/EMPresult/`，与 R 的对照见报告 3.4 节：
+平台（不配对）与 R（配对）在名义显著的特征上方向 100% 一致；
+平台自己算的 UC Shannon 用配对检验 p=0.020，按不配对处理 p=0.214。
+
+操作步骤见 `docs/EMP操作单.md`。

@@ -1,0 +1,43 @@
+=========== Week 6 平台结果与 R 结果对照 ===========
+时间: 2026-09-25 00:58:17
+
+---- IBS ----
+  平台特征 128 | R 特征 136 | 两边共有 128
+  方向一致率（R 中位变化非零的 128 个共有特征）: 77.3%
+  方向一致率（任一方法未校正 p<0.05 的 13 个特征）: 100.0%
+  平台：Wilcoxon 秩和（不配对） 最小p=0.0017 最小FDR=0.181  p<0.05:10  FDR<0.05:0
+  R：Wilcoxon 符号秩（配对） 最小p=0.0006 最小FDR=0.087  p<0.05:12  FDR<0.05:0
+  主要特征对照（平台 sign_group vs R 中位变化）:
+    f__Bacteroidaceae;g__Bacteroides         平台:before p=0.0031 | R:before Δ=-1.452 p=0.0006  一致
+    g__;s__                                  平台:before p=0.0017 | R:before Δ=-0.671 p=0.0047  一致
+    g__Akkermansia;s__muciniphila            平台:after  p=0.0469 | R:after  Δ=+1.271 p=0.0038  一致
+    g__Fusobacterium;s__                     平台:before p=0.0042 | R:before Δ=-0.464 p=0.0099  一致
+    g__Lactobacillus;s__reuteri              平台:after  p=0.0073 | R:after  Δ=+0.401 p=0.0265  一致
+    g__Lactobacillus;s__                     平台:after  p=0.1430 | R:after  Δ=+1.074 p=0.0082  一致
+    f__Bifidobacteriaceae;g__Bifidobacterium 平台:after  p=0.0104 | R:after  Δ=+0.554 p=0.0288  一致
+    g__Bifidobacterium;s__animalis           平台:after  p=0.0122 | R:after  Δ=+0.401 p=0.0179  一致
+
+---- UC ----
+  平台特征 120 | R 特征 136 | 两边共有 120
+  方向一致率（R 中位变化非零的 120 个共有特征）: 68.3%
+  方向一致率（任一方法未校正 p<0.05 的 15 个特征）: 100.0%
+  平台：Wilcoxon 秩和（不配对） 最小p=0.0081 最小FDR=0.457  p<0.05:10  FDR<0.05:0
+  R：Wilcoxon 符号秩（配对） 最小p=0.0129 最小FDR=0.471  p<0.05:11  FDR<0.05:0
+  主要特征对照（平台 sign_group vs R 中位变化）:
+    g__Bifidobacterium;s__                   平台:after  p=0.0081 | R:after  Δ=+0.631 p=0.0259  一致
+    o__Bifidobacteriales;f__Bifidobacteriace 平台:after  p=0.0679 | R:after  Δ=+0.707 p=0.0129  一致
+    g__Bacteroides;s__caccae                 平台:before p=0.0184 | R:before Δ=-0.392 p=0.0219  一致
+    g__Bifidobacterium;s__animalis           平台:after  p=0.0201 | R:after  Δ=+0.179 p=0.0762  一致
+    g__Bacteroides;s__fragilis               平台:before p=0.0232 | R:before Δ=-0.614 p=0.0207  一致
+    g__Bacteroides;s__uniformis              平台:before p=0.0387 | R:before Δ=-0.614 p=0.0219  一致
+    f__Bacteroidaceae;g__Bacteroides         平台:before p=0.0266 | R:before Δ=-1.153 p=0.0232  一致
+    g__Rothia;s__mucilaginosa                平台:before p=0.0238 | R:before Δ=-0.801 p=0.0379  一致
+
+---- 平台计算的 Shannon（全样本 Run All），用配对检验复核 ----
+  平台 alpha 表样本数: 132（含 2 个无元数据样本，下方配对时自然排除）
+  IBS n=35 对  中位 1.651 -> 1.620  配对 p=0.1614 | 若当作独立两组 p=0.3296
+  UC  n=29 对  中位 1.570 -> 1.443  配对 p=0.0195 | 若当作独立两组 p=0.2135
+  说明：平台的 alpha 在属水平聚合后、未抽平的计数上计算，R 的是物种水平抽平后计算，
+        两者数值不直接可比，这里只比较「配对与否」对结论的影响。
+
+已写出 results/05_*.csv, figures/05_platform_vs_R.png

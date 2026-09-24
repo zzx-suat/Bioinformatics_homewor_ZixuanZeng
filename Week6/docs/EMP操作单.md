@@ -5,6 +5,9 @@ You need to complete whole analysis procedures and submit the final result via t
 
 **提交通道是 EMP Sync，必须在平台上跑。** 本目录的 R 分析是并行的方法学交叉核对，不替代平台操作。
 
+> **执行记录（2026-09-25）**：已按本操作单完成平台操作并同步两次（IBS：res6qh；UC：oqnxna）。
+> 平台实际产出见 `results/EMPresult/`，与 R 的对照见报告 3.4 节。
+
 ---
 
 ## 上传的两个文件
