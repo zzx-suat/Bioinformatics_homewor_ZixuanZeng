@@ -8,6 +8,9 @@
 完成状态与操作指南.md
 generate_final_doc.py
 *_token*
+# school LLM API key in plaintext
+school_api_tester.py
+学校API调用与LLM验证教程.md
 *.pem
 *.key
 .env
@@ -27,6 +30,12 @@ image.png
 Start-Harness.ps1
 Fix-DSH-Permission.bat
 install_emp_web.ps1
+# Week 1 working leftovers: course PDFs (not ours to republish) and drafts
+Week1_Lecture.pdf
+Week1_Reading.pdf
+Homework_Week1.docx
+Based on the available search results.docx
+generate_homework_doc.py
 
 # --- R / Python scratch ------------------------------------------------------
 .Rproj.user/
